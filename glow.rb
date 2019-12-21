@@ -7,7 +7,7 @@ class Glow < Formula
 
   if OS.mac?
     url "https://github.com/charmbracelet/glow/releases/download/v0.1/glow_0.1_Darwin_x86_64.tar.gz"
-    sha256 "a35b4b7e95238313b2fee7f14fa07ecf6dab4df7067838d6a93c8c6086f0eaaf"
+    sha256 "a7feaea77e48f1be345ea9d7b73a649c49f46b679c5e48c0c911c8315a66680d"
   elsif OS.linux?
   end
 
