@@ -2,12 +2,12 @@
 class Glow < Formula
   desc "Render markdown on the CLI"
   homepage "https://charm.sh/"
-  version "0.1.5"
+  version "0.1.6"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/glow/releases/download/v0.1.5/glow_0.1.5_Darwin_x86_64.tar.gz"
-    sha256 "95e8e86a0717b252bc17784bcc96e3e43341a411911367ef162e9f22fa797e82"
+    url "https://github.com/charmbracelet/glow/releases/download/v0.1.6/glow_0.1.6_Darwin_x86_64.tar.gz"
+    sha256 "f48e8264964c35af9a7fe8214e1f4f24df8993750d95802334cb5234a4e950c7"
   elsif OS.linux?
   end
 
