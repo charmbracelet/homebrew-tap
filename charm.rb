@@ -2,12 +2,12 @@
 class Charm < Formula
   desc "Manage your Charm account and encrypt/decrypt data"
   homepage "https://charm.sh/"
-  version "0.8.2"
+  version "0.8.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/charm/releases/download/v0.8.2/charm_0.8.2_Darwin_x86_64.tar.gz"
-    sha256 "2f28d2a8c88ac00b8c7f6a47b1ef58e99921e50c5230f9d76f576835dca4f657"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.3/charm_0.8.3_Darwin_x86_64.tar.gz"
+    sha256 "10803e9661b1c0577d76fdae518e7f05bd82abe1e1a7c65af93ffbec46e905ef"
   elsif OS.linux?
   end
 
