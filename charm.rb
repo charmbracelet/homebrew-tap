@@ -2,13 +2,26 @@
 class Charm < Formula
   desc "Manage your Charm account and encrypt/decrypt data"
   homepage "https://charm.sh/"
-  version "0.8.3"
+  version "0.8.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/charm/releases/download/v0.8.3/charm_0.8.3_Darwin_x86_64.tar.gz"
-    sha256 "10803e9661b1c0577d76fdae518e7f05bd82abe1e1a7c65af93ffbec46e905ef"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_Darwin_x86_64.tar.gz"
+    sha256 "db59e1a3a5e48793e4ddd5867defaba0731753011da8e0494604b8ce0c52201f"
   elsif OS.linux?
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_x86_64.tar.gz"
+      sha256 "7754d16602e084becefba1cf5afbc3faa030af4993b931542528a690efc69817"
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_arm64.tar.gz"
+        sha256 "050bc5a2f5d43ea5dcc3bedd735465d39901bf6abec624304e8a6d59cbb4655c"
+      else
+        url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_armv6.tar.gz"
+        sha256 "d5925f3683f8c182da82fbcae86ec183483908175a5409cc32d864f3dcf31fe4"
+      end
+    end
   end
 
   def install
