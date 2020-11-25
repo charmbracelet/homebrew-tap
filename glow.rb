@@ -2,24 +2,24 @@
 class Glow < Formula
   desc "Render markdown on the CLI"
   homepage "https://charm.sh/"
-  version "1.2.0"
+  version "1.2.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.2.0/glow_1.2.0_Darwin_x86_64.tar.gz"
-    sha256 "324cef8a58e313164435a059c3a460abc11f8d2e06123fe04071c44fbcb9e68a"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.2.1/glow_1.2.1_Darwin_x86_64.tar.gz"
+    sha256 "30128e3fdc70f7da1390db0cb4c00f906381567b8b1f2bf37820d5165edb6d9e"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.2.0/glow_1.2.0_linux_x86_64.tar.gz"
-    sha256 "a788f9b0590637509854a7fb2cba6c7a0f55f8869baced20c0357e8fef160248"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.2.1/glow_1.2.1_linux_x86_64.tar.gz"
+    sha256 "b7df93616d2d9d733f05879da45e013f9c3815061bb90cfbe377414ae72dfce3"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.2.0/glow_1.2.0_linux_armv6.tar.gz"
-    sha256 "0bf170c50292b3ebba8b3ec94d5e701dfd05850337537effed6123f3f7dc0257"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.2.1/glow_1.2.1_linux_armv6.tar.gz"
+    sha256 "5d383ecb4f53657e2f8c6d53ce96bd71c451a9f354dbb85679327f5977c41a37"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.2.0/glow_1.2.0_linux_arm64.tar.gz"
-    sha256 "eedb959b9e4f6ebc0938799902f98e1f28904cb8ec257dc9cd57286df32b184d"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.2.1/glow_1.2.1_linux_arm64.tar.gz"
+    sha256 "6fdeed678d28eeb6b9f8ff8d4aaa401b371a7eb1c9ff91ec671ebbf5bede25a7"
   end
 
   def install
