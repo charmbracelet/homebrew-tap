@@ -6,20 +6,20 @@ class Charm < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_Darwin_x86_64.tar.gz"
-    sha256 "237bfb0729f30aa4db05e8824525d14408dbd7cb0c4605e23637c053ab76d525"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.5/charm_0.8.5_Darwin_x86_64.tar.gz"
+    sha256 "a91c238febdf1a1aac9289a87bad550c59ad1240e9ec7d7d08e9f4739f2a58f0"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_x86_64.tar.gz"
-    sha256 "3b2918bdf5eb08267a628965a58d7db87c02cbe3e7398f49e8917a507a12a3a3"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.5/charm_0.8.5_linux_x86_64.tar.gz"
+    sha256 "c071ec07b23033fe4574392069d25099fbbafdbd2243194f3d1814fc5694d015"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_armv6.tar.gz"
-    sha256 "e53b216f4f73092395b595b697f4809feadb730eab22e03f4cd88b19fbf9fead"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.5/charm_0.8.5_linux_armv6.tar.gz"
+    sha256 "ab9264778d4f04b7c30a724a6522e1a6f381d56facd860c006014c241d443ec1"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_arm64.tar.gz"
-    sha256 "c28b6ad37f6e7789f512e9c64e0406029a92eeb8555bbd7e1331dd19e9c66e61"
+    url "https://github.com/charmbracelet/charm/releases/download/v0.8.5/charm_0.8.5_linux_arm64.tar.gz"
+    sha256 "a67e891d291ee6b985c9e55648b9575f58fffe572d61c182629e64d26bea29c8"
   end
 
   def install
