@@ -2,26 +2,24 @@
 class Charm < Formula
   desc "Manage your Charm account and encrypt/decrypt data"
   homepage "https://charm.sh/"
-  version "0.8.4"
+  version "0.8.5"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_Darwin_x86_64.tar.gz"
-    sha256 "db59e1a3a5e48793e4ddd5867defaba0731753011da8e0494604b8ce0c52201f"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_x86_64.tar.gz"
-      sha256 "7754d16602e084becefba1cf5afbc3faa030af4993b931542528a690efc69817"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_arm64.tar.gz"
-        sha256 "050bc5a2f5d43ea5dcc3bedd735465d39901bf6abec624304e8a6d59cbb4655c"
-      else
-        url "https://github.com/charmbracelet/charm/releases/download/v0.8.4/charm_0.8.4_linux_armv6.tar.gz"
-        sha256 "d5925f3683f8c182da82fbcae86ec183483908175a5409cc32d864f3dcf31fe4"
-      end
-    end
+    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_Darwin_x86_64.tar.gz"
+    sha256 "8d243563a8ca09739fb0198b545bf77e37e16f4d1fd424a216707141acba300d"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_x86_64.tar.gz"
+    sha256 "c4903795cbb3c915c4035bc7875ec321e216d8f07b46c0a295e38039e02dd036"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_armv6.tar.gz"
+    sha256 "9e0fd54df3e563ccf1036b2fbeae140ba7c3990c52219ed81d1b8dca557192fd"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_arm64.tar.gz"
+    sha256 "8c9bc0a54119cc0307941fc7ebcba985b28adabbdcd68793189e9501840c265a"
   end
 
   def install
