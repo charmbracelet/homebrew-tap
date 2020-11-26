@@ -7,19 +7,19 @@ class Charm < Formula
 
   if OS.mac?
     url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_Darwin_x86_64.tar.gz"
-    sha256 "8d243563a8ca09739fb0198b545bf77e37e16f4d1fd424a216707141acba300d"
+    sha256 "237bfb0729f30aa4db05e8824525d14408dbd7cb0c4605e23637c053ab76d525"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_x86_64.tar.gz"
-    sha256 "c4903795cbb3c915c4035bc7875ec321e216d8f07b46c0a295e38039e02dd036"
+    sha256 "3b2918bdf5eb08267a628965a58d7db87c02cbe3e7398f49e8917a507a12a3a3"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_armv6.tar.gz"
-    sha256 "9e0fd54df3e563ccf1036b2fbeae140ba7c3990c52219ed81d1b8dca557192fd"
+    sha256 "e53b216f4f73092395b595b697f4809feadb730eab22e03f4cd88b19fbf9fead"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/charmbracelet/charm-internal/releases/download/v0.8.5/charm_0.8.5_linux_arm64.tar.gz"
-    sha256 "8c9bc0a54119cc0307941fc7ebcba985b28adabbdcd68793189e9501840c265a"
+    sha256 "c28b6ad37f6e7789f512e9c64e0406029a92eeb8555bbd7e1331dd19e9c66e61"
   end
 
   def install
