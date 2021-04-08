@@ -5,28 +5,28 @@
 class Glow < Formula
   desc "Render markdown on the CLI"
   homepage "https://charm.sh/"
-  version "1.4.0"
+  version "1.4.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.4.0/glow_1.4.0_Darwin_x86_64.tar.gz"
-    sha256 "c7364dbe4bb7c51022cd142957f73d01f9d559f033c162747f2aeda5a5fca6f1"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_Darwin_x86_64.tar.gz"
+    sha256 "002d3640659e86a89ec5ea75cfbf2c40576781433a1cd87258e6cd1cab0bb1a0"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.4.0/glow_1.4.0_Darwin_arm64.tar.gz"
-    sha256 "d6b2a506755e12147b5b0693ba9770a2c42acf0b3cf429a3111a27cb06eac5c1"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_Darwin_arm64.tar.gz"
+    sha256 "9b8abcc23a06ce21171eb9b6275100092266469e5dbdb3654a0af5823ee435cc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.4.0/glow_1.4.0_linux_x86_64.tar.gz"
-    sha256 "eeb580f286c0b1a2772763236b69a4771fa55d37e003e6b6c80af534743ead45"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_x86_64.tar.gz"
+    sha256 "ab7b4cf9ae6e20d6c898688c5f33876297f9ef04616cbceff8e0379df9d06321"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.4.0/glow_1.4.0_linux_armv6.tar.gz"
-    sha256 "9fbdd5fd45688f5b72e3e0afcae6d8d354c962e53597fe4dbf80bd38be8376a4"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_armv6.tar.gz"
+    sha256 "7a8afd80022c0a1fde522c72f4a3511d3dad9f7d209e7afeee533d57694bf98b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/charmbracelet/glow/releases/download/v1.4.0/glow_1.4.0_linux_arm64.tar.gz"
-    sha256 "92ee8c8b7cc5ae0b94694a3b97b45bf56af174e120aab7c0c6a31def12d6adb0"
+    url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_linux_arm64.tar.gz"
+    sha256 "f0fd0bc75244875e0e69d1d6bc36e6988b30d90c4bd0c476a611fd8f826c1a51"
   end
 
   def install
