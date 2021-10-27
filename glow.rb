@@ -6,7 +6,6 @@ class Glow < Formula
   desc "Render markdown on the CLI"
   homepage "https://charm.sh/"
   version "1.4.1"
-  bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/charmbracelet/glow/releases/download/v1.4.1/glow_1.4.1_Darwin_x86_64.tar.gz"

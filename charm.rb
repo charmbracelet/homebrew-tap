@@ -6,7 +6,6 @@ class Charm < Formula
   desc "Manage your Charm account and encrypt/decrypt data"
   homepage "https://charm.sh/"
   version "0.8.6"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/charmbracelet/charm/releases/download/v0.8.6/charm_0.8.6_Darwin_x86_64.tar.gz"
