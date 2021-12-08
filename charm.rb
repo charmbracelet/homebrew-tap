@@ -5,20 +5,20 @@
 class Charm < Formula
   desc "Manage your Charm account and encrypt/decrypt data"
   homepage "https://charm.sh/"
-  version "0.9.0"
+  version "0.9.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.9.0/charm_0.9.0_Darwin_arm64.tar.gz"
-      sha256 "76391ede6626925b6beada879e8e2471527a023b9bfada74c4e5fd61a6257c5a"
+      url "https://github.com/charmbracelet/charm/releases/download/v0.9.1/charm_0.9.1_Darwin_arm64.tar.gz"
+      sha256 "5099862f6b72c392a31685801b0f09a60939d40139de31553e8afcbfe9535d68"
 
       def install
         bin.install "charm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.9.0/charm_0.9.0_Darwin_x86_64.tar.gz"
-      sha256 "3fe09d1781b6bf44675c70573855bf79e7897922ea0ddf99e4685ab376c16f61"
+      url "https://github.com/charmbracelet/charm/releases/download/v0.9.1/charm_0.9.1_Darwin_x86_64.tar.gz"
+      sha256 "0bec5595b95e31e43b507bee946ebeb3bb6a86305771259b384699bc8a6f29bf"
 
       def install
         bin.install "charm"
@@ -27,25 +27,25 @@ class Charm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.9.0/charm_0.9.0_linux_arm64.tar.gz"
-      sha256 "9677250a05c413a30bd20c8076ab4a02afa27b1ce420437df58da6de06b7eb25"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.9.1/charm_0.9.1_linux_armv6.tar.gz"
+      sha256 "bf0cdf11a673843e3f04ba3c53a68197c254e895c1cf972a7b61c021a15c7c3d"
 
       def install
         bin.install "charm"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.9.0/charm_0.9.0_linux_armv6.tar.gz"
-      sha256 "61bc275deef53e1dc913334a610a2b6ffef13de42e0efdf201bd99be47285c46"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.9.1/charm_0.9.1_linux_arm64.tar.gz"
+      sha256 "60cd14d7c462320eb329423f68250e33cc3515db09a605d7b90d028ddb6ea127"
 
       def install
         bin.install "charm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.9.0/charm_0.9.0_linux_x86_64.tar.gz"
-      sha256 "668f6cbeb38e550be4e87dd7b8a29e5cda2e6473a1e801fb44f4b7060a587622"
+      url "https://github.com/charmbracelet/charm/releases/download/v0.9.1/charm_0.9.1_linux_x86_64.tar.gz"
+      sha256 "0a7246b6b92fba145e712d4f5e05c03bc4911698875b99cb8e737894b616fc16"
 
       def install
         bin.install "charm"
