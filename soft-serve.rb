@@ -5,20 +5,20 @@
 class SoftServe < Formula
   desc "A personal key value store"
   homepage "https://charm.sh/"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.1/soft-serve_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "85963f54a973408c7f20e06e37f54cda62ca79c74e272f90e111dd3ece0e9d0a"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.2/soft-serve_0.1.2_Darwin_arm64.tar.gz"
+      sha256 "f3716254cc85f474bdd467f42328571455abb9d25e41bba394c70ac92941e195"
 
       def install
         bin.install "soft"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.1/soft-serve_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "d89b1803f9fa540d25a9d2a2b5e882fb59cb3c3dd6b1f34332caa4fb173bfa1d"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.2/soft-serve_0.1.2_Darwin_x86_64.tar.gz"
+      sha256 "bedfdb0b0cb491178806385253ef12a5cb400a4398e6900c8e87edbdb8b5eac9"
 
       def install
         bin.install "soft"
@@ -28,24 +28,24 @@ class SoftServe < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.1/soft-serve_0.1.1_linux_armv6.tar.gz"
-      sha256 "ace30a06c6a5cb3d142bef198d453215b418d3a16fe79905a3cba52aba9e0141"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.2/soft-serve_0.1.2_linux_armv6.tar.gz"
+      sha256 "6b0aa44637c9903c48279b59fec75d0a49621b95b68dffc5ed1c5c1c68271002"
 
       def install
         bin.install "soft"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.1/soft-serve_0.1.1_linux_x86_64.tar.gz"
-      sha256 "5b17b6c3074e3434edf1470607b1f0acd0cd98ac121b6cbb1613b61fb54eb014"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.2/soft-serve_0.1.2_linux_x86_64.tar.gz"
+      sha256 "15d7a49b99706721eb1b6af1a1be7a437600cc14934c2889799a53fa32622cfc"
 
       def install
         bin.install "soft"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.1/soft-serve_0.1.1_linux_arm64.tar.gz"
-      sha256 "5fa1056b49d9d7fd7b614dab80ecdbe9e5367a1ae8475378ad01804fbfee7a85"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.1.2/soft-serve_0.1.2_linux_arm64.tar.gz"
+      sha256 "6d081817427cdeef3eca6227ba03bf2e971cedc9258278c8e25f2c6dcc75596d"
 
       def install
         bin.install "soft"
