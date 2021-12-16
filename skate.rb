@@ -5,20 +5,20 @@
 class Skate < Formula
   desc "A personal key value store"
   homepage "https://charm.sh/"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.1.2/skate_0.1.2_Darwin_arm64.tar.gz"
-      sha256 "66a06fbec0655548f6bdea22b855055546fbe7ad2ff5fd91076f51d527601c5e"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/skate/releases/download/v0.1.3/skate_0.1.3_Darwin_x86_64.tar.gz"
+      sha256 "207e597e717ab3231f7d14eb4bd9bbb24e7246d959f38ad5a90597f353074190"
 
       def install
         bin.install "skate"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.1.2/skate_0.1.2_Darwin_x86_64.tar.gz"
-      sha256 "071447ec004fde361045246218a31cae33e8d14940402caa3abf1c6ffa297231"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/skate/releases/download/v0.1.3/skate_0.1.3_Darwin_arm64.tar.gz"
+      sha256 "d9484450ff73426344e11d60f3387373e3c2fbd89e8a57a44d35d6eacdd5805a"
 
       def install
         bin.install "skate"
@@ -27,25 +27,25 @@ class Skate < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.1.2/skate_0.1.2_linux_x86_64.tar.gz"
-      sha256 "6a6c424d07a9a16e51e90eb79b240aaaf879c8d12f152828535e1d634a64327e"
-
-      def install
-        bin.install "skate"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.1.2/skate_0.1.2_linux_arm64.tar.gz"
-      sha256 "1db470a3d4722a827f81991ad3d0d5cb477e81cd9d4b42280b6c95589fad74e9"
+      url "https://github.com/charmbracelet/skate/releases/download/v0.1.3/skate_0.1.3_linux_arm64.tar.gz"
+      sha256 "7142ef656b631875755cc860043b65a5da421c75a7b3a626d6024c86e121add4"
 
       def install
         bin.install "skate"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.1.2/skate_0.1.2_linux_armv6.tar.gz"
-      sha256 "befe9c7905048acc201548622dcd12a891fabd41f3547e009e7fbef2e56b8f00"
+      url "https://github.com/charmbracelet/skate/releases/download/v0.1.3/skate_0.1.3_linux_armv6.tar.gz"
+      sha256 "b34a7218984231b63548018bb8744cdeb336d6fc1376f979f513da6d593c376f"
+
+      def install
+        bin.install "skate"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/skate/releases/download/v0.1.3/skate_0.1.3_linux_x86_64.tar.gz"
+      sha256 "073fed9ad4113df64d5634a0bd53480216644109243a18fb6cccf8f3d7d27119"
 
       def install
         bin.install "skate"
