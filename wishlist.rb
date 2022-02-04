@@ -5,12 +5,12 @@
 class Wishlist < Formula
   desc "The SSH directory"
   homepage "https://charm.sh/"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.1/wishlist_0.2.1_Darwin_x86_64.tar.gz"
-      sha256 "1edaa896b05edaf682f9701f7fd191c44b75d931f43bbb2e9d542cd93921d186"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.2/wishlist_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "8aae2168c7d3521aa0fa28825498124681b755da44964bc3e6d700b3e5b1702e"
 
       def install
         bin.install "wishlist"
@@ -21,8 +21,8 @@ class Wishlist < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.1/wishlist_0.2.1_Darwin_arm64.tar.gz"
-      sha256 "393c21d72c8ee1f1c9ba7d4e3e819df891cc0efa0d36efec193a19b7d5ffafd3"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.2/wishlist_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "05dfac300dc28f967f202fedbc91eca7aa4b3e55f3cc54b301e1a0a9703d34bb"
 
       def install
         bin.install "wishlist"
@@ -35,9 +35,9 @@ class Wishlist < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.1/wishlist_0.2.1_linux_x86_64.tar.gz"
-      sha256 "9a87bb93ad22a2277f4ef1f5d8c1f417fa1a1632ac132d9a043d61dd66e2e6b7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.2/wishlist_0.2.2_linux_arm64.tar.gz"
+      sha256 "823f2df7510ab951556f3c8a13a51967793a17c632129c8bb681f5ca4e3f227c"
 
       def install
         bin.install "wishlist"
@@ -47,9 +47,9 @@ class Wishlist < Formula
         man1.install "manpages/wishlist.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.1/wishlist_0.2.1_linux_arm64.tar.gz"
-      sha256 "74cfc49a92e88f322cb821571b229f2f2501f9a37fd03c913edb304e52a12c9d"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.2.2/wishlist_0.2.2_linux_x86_64.tar.gz"
+      sha256 "66aba04ac7948e1d72a45bcd354de49379d4f7f75dc45ab5c5fcf5faf8f6ff3a"
 
       def install
         bin.install "wishlist"
