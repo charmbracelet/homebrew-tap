@@ -5,20 +5,20 @@
 class Charm < Formula
   desc "The Charm Tool and Library 🌟"
   homepage "https://charm.sh/"
-  version "0.10.2"
+  version "0.10.3"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.10.2/charm_0.10.2_Darwin_arm64.tar.gz"
-      sha256 "5fe80656c7f36405395ddd8438b4ab022f627e63a237a6b874736da2d6b1e29b"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.10.3/charm_0.10.3_Darwin_x86_64.tar.gz"
+      sha256 "8b1edda4b7e50f52b1339a9a80c4a0c9eca04bc1b43c2193e24c516dbcfcd3dc"
 
       def install
         bin.install "charm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.10.2/charm_0.10.2_Darwin_x86_64.tar.gz"
-      sha256 "289de58da1bffe3f97d231738b7a6c69327dcd391ec19d6637b68dca62e9d122"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.10.3/charm_0.10.3_Darwin_arm64.tar.gz"
+      sha256 "de3604b8e4e558305b6834fde7390da0db45e718858b58f5669ba5c90bc9e43f"
 
       def install
         bin.install "charm"
@@ -27,25 +27,25 @@ class Charm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.10.2/charm_0.10.2_linux_armv6.tar.gz"
-      sha256 "7d4543d1e574e30f89a5f288d75848d4e73a768b1d3534d14d701767be8eceff"
-
-      def install
-        bin.install "charm"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.10.2/charm_0.10.2_linux_arm64.tar.gz"
-      sha256 "7f4c59087fbd8df3c5a697b3e8767b49c48c89d8fa3fc35d3b1db3a5de71b9a9"
+      url "https://github.com/charmbracelet/charm/releases/download/v0.10.3/charm_0.10.3_linux_arm64.tar.gz"
+      sha256 "85cf250504ec041c4257429faf7f626fba843329ab8474c4b40c7391871450d2"
 
       def install
         bin.install "charm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/charm/releases/download/v0.10.2/charm_0.10.2_linux_x86_64.tar.gz"
-      sha256 "3121cb451843ed6740881dbe6b28d26813d4775de39ae6c2effd3150b8577a80"
+      url "https://github.com/charmbracelet/charm/releases/download/v0.10.3/charm_0.10.3_linux_x86_64.tar.gz"
+      sha256 "c390b203f166e85ea5e52d31a94495ac31f96895505fbd5ef848f873512a0b24"
+
+      def install
+        bin.install "charm"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/charm/releases/download/v0.10.3/charm_0.10.3_linux_armv6.tar.gz"
+      sha256 "7cf44937a6fe08c07957e6d0191527787647de8d723075bd897a07686977b6d6"
 
       def install
         bin.install "charm"
