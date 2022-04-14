@@ -5,12 +5,12 @@
 class Wishlist < Formula
   desc "The SSH directory"
   homepage "https://charm.sh/"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.3.0/wishlist_0.3.0_Darwin_x86_64.tar.gz"
-      sha256 "33bd2b3bb94fbf5c6fd6e56c74eba0f79440ef43c8025c9650277aa0fe0bef96"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.4.0/wishlist_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "d389ff61682f138923df1f1705428a4287fb9054a4ac7dfd0e91f99605eb55bc"
 
       def install
         bin.install "wishlist"
@@ -21,8 +21,8 @@ class Wishlist < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.3.0/wishlist_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "0a725213641256fbd92412ac0bc1276c363afeedcd51a4d6347e7c4bcc1d330c"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.4.0/wishlist_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "e82d1e14ea290d6171e31b6a06f7dd0c72b35745d4d413a5065e7ba04236bdd9"
 
       def install
         bin.install "wishlist"
@@ -36,8 +36,8 @@ class Wishlist < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.3.0/wishlist_0.3.0_linux_arm64.tar.gz"
-      sha256 "445c8ab97e42e32a0a9a4b912c9d895626b0c970e5bab76bee0b6387ed281799"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.4.0/wishlist_0.4.0_linux_arm64.tar.gz"
+      sha256 "51b7aa614aaeda0a19dc814a21f344e171d36820d24aa703756c73f101ca58b9"
 
       def install
         bin.install "wishlist"
@@ -48,8 +48,8 @@ class Wishlist < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.3.0/wishlist_0.3.0_linux_x86_64.tar.gz"
-      sha256 "88d37674a137f5ff90bda95de971ff4d0ccfc3673700c3f3d0f01cc60227af76"
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.4.0/wishlist_0.4.0_linux_x86_64.tar.gz"
+      sha256 "87934b8adc5cbc4096e1144dfb9d3cac634803d7ebb1bd936e38f4e861843c1e"
 
       def install
         bin.install "wishlist"
