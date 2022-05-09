@@ -5,12 +5,12 @@
 class Melt < Formula
   desc "Backup and restore Ed25519 SSH keys with seed words"
   homepage "https://charm.sh/"
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.3.0/melt_0.3.0_Darwin_x86_64.tar.gz"
-      sha256 "0b79a73bc0984171b0c668b06b9541b19bcb9e590f593bceb71a6b17d764d1f2"
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.0/melt_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "2c8882eafa3011d20d198bf471e5e1414f794c74e47c1534ae96f5d7790f43ec"
 
       def install
         bin.install "melt"
@@ -21,8 +21,8 @@ class Melt < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.3.0/melt_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "3c4b91808236a4f4d1a4cf7475f04d138553cb61066910d649c86ad58fdf6df2"
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.0/melt_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "3c6ff272d428b76ad3945462cf256eab7325548970b6893d785e6c1de118e52f"
 
       def install
         bin.install "melt"
@@ -36,8 +36,8 @@ class Melt < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.3.0/melt_0.3.0_linux_x86_64.tar.gz"
-      sha256 "1875170b34a2cc650fc1c19fb6889752d3f051cf8471e5ab373c35b4fc45dbf3"
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.0/melt_0.4.0_linux_x86_64.tar.gz"
+      sha256 "028726611543e07eaad03f4ffd6f8baec972fbb5a8a03ba0a1a9e0d810a3f9cf"
 
       def install
         bin.install "melt"
@@ -48,8 +48,8 @@ class Melt < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.3.0/melt_0.3.0_linux_arm64.tar.gz"
-      sha256 "698dccbae4ddd6ce1aed0e3f31b101ffdf98a3b5bd94913975f2caaf11960c40"
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.0/melt_0.4.0_linux_arm64.tar.gz"
+      sha256 "fdcf707210b9bf5bd153ae142d1161f14fdea50aa64e52379c553630738efe99"
 
       def install
         bin.install "melt"
