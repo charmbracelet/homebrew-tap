@@ -5,12 +5,12 @@
 class Gum < Formula
   desc "Tasty Bubble Gum for your shell."
   homepage "https://charm.sh/"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.1.0/gum_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "de400405cf06dac8e8cc8571cfa91ec8c400c9efe86e07a121da44e47e4899b3"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.2.0/gum_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "a8549d1945c6c51f7c6b51e28f5f070480fd1cf9233864fa6fe6b7e9805a1d46"
 
       def install
         bin.install "gum"
@@ -21,8 +21,8 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.1.0/gum_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "a64696182b6c114af0af869c074c8ac75f3b9f64a399410bbf05527e6f7c5eef"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.2.0/gum_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "b7506c3e8800bc3a3a5b13ee7cf08fa2cfc78109927c2d5aeccf4db661f34b73"
 
       def install
         bin.install "gum"
@@ -36,8 +36,8 @@ class Gum < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.1.0/gum_0.1.0_linux_arm64.tar.gz"
-      sha256 "95f661e3178ee805dbf463efa231f9f5f60c3ba1242d57f00eb84b07c5cfa27f"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.2.0/gum_0.2.0_linux_arm64.tar.gz"
+      sha256 "36bc034b61ea5e67710773f1fd51c2745478953008de4180127dbac16cfd6249"
 
       def install
         bin.install "gum"
@@ -48,8 +48,8 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.1.0/gum_0.1.0_linux_x86_64.tar.gz"
-      sha256 "a8ad13621e1b002cc1d52b5b49096f5ba59ac0e3e940dd75af7c5dfde42968ad"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.2.0/gum_0.2.0_linux_x86_64.tar.gz"
+      sha256 "ff5cde812ea3aa8eab2cf6944da892e639449460719b9fab909a85f7bc5104cf"
 
       def install
         bin.install "gum"
