@@ -5,12 +5,12 @@
 class SoftServe < Formula
   desc "A tasty, self-hostable Git server for the command line🍦"
   homepage "https://charm.sh/"
-  version "0.3.3"
+  version "0.4.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.3.3/soft-serve_0.3.3_Darwin_x86_64.tar.gz"
-      sha256 "a08f98f776bf78c2fa68d08381110acf427f26a11b74e39b94233b9e3b1a3c38"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.4.0/soft-serve_0.4.0_Darwin_arm64.tar.gz"
+      sha256 "42d5c29fef8a224c4fd6330e509ccb859be5dda1c6b49366ad9c694aedf4465b"
 
       def install
         bin.install "soft-serve"
@@ -20,9 +20,9 @@ class SoftServe < Formula
         man1.install "manpages/soft-serve.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.3.3/soft-serve_0.3.3_Darwin_arm64.tar.gz"
-      sha256 "c80423de4a1a82443c625f387fa1d48d14209860719af41e001279be5be8d35c"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.4.0/soft-serve_0.4.0_Darwin_x86_64.tar.gz"
+      sha256 "b6bdfd5e8b31fe3b175f6fdd3b40b82b704c7b348fe818f51fe6d6b9b439937c"
 
       def install
         bin.install "soft-serve"
@@ -36,8 +36,8 @@ class SoftServe < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.3.3/soft-serve_0.3.3_linux_arm64.tar.gz"
-      sha256 "919b096373fa8c058634c10d3d5ef7bc07a96bee2c028e55cf9b89f5b6d86b81"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.4.0/soft-serve_0.4.0_linux_arm64.tar.gz"
+      sha256 "1c03423e56c7067f028a0e4b7277de66407926fb871e9a28e57428daa82b4705"
 
       def install
         bin.install "soft-serve"
@@ -48,8 +48,8 @@ class SoftServe < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.3.3/soft-serve_0.3.3_linux_x86_64.tar.gz"
-      sha256 "c4c429d1c7b3866d3324e6fd4d665c64e782f093de2703131974802461a0371a"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.4.0/soft-serve_0.4.0_linux_x86_64.tar.gz"
+      sha256 "537358ab3b260584d77c4ffd40168ca2323ee3eb850f6ff6b1b32af9fdc021c4"
 
       def install
         bin.install "soft-serve"
