@@ -5,50 +5,70 @@
 class Skate < Formula
   desc "A personal key value store 🛼"
   homepage "https://charm.sh/"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.2.0/skate_0.2.0_Darwin_arm64.tar.gz"
-      sha256 "ae2ff90aa8c87b80de646666553d3805af40a6c0c7d4e00cad643e600eedd74d"
+      url "https://github.com/charmbracelet/skate/releases/download/v0.2.1/skate_0.2.1_Darwin_arm64.tar.gz"
+      sha256 "3450e8653646dd49145f04f2b2a7f90ce387974ca0322ef4c0f169f3ea82df70"
 
       def install
         bin.install "skate"
+        bash_completion.install "completions/skate.bash" => "skate"
+        zsh_completion.install "completions/skate.zsh" => "_skate"
+        fish_completion.install "completions/skate.fish"
+        man1.install "manpages/skate.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.2.0/skate_0.2.0_Darwin_x86_64.tar.gz"
-      sha256 "10f02faab6ecef0c2bd631e510ee7c9c584fca565a13ccb543ae44af79287014"
+      url "https://github.com/charmbracelet/skate/releases/download/v0.2.1/skate_0.2.1_Darwin_x86_64.tar.gz"
+      sha256 "054d7afb3f873edd10f7b6fee159bb465ac2a03e6cde956009b13f7a3356ebfa"
 
       def install
         bin.install "skate"
+        bash_completion.install "completions/skate.bash" => "skate"
+        zsh_completion.install "completions/skate.zsh" => "_skate"
+        fish_completion.install "completions/skate.fish"
+        man1.install "manpages/skate.1.gz"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.2.0/skate_0.2.0_linux_arm64.tar.gz"
-      sha256 "cefd15f3988e391042548585a3ca229f93e7ada362a29bfc1ffe8162338f624b"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/skate/releases/download/v0.2.1/skate_0.2.1_linux_armv6.tar.gz"
+      sha256 "a584419bd9e991e509d47b9f8dfe4cd9d87ea9009b1450a673291fbf147f4ec0"
 
       def install
         bin.install "skate"
+        bash_completion.install "completions/skate.bash" => "skate"
+        zsh_completion.install "completions/skate.zsh" => "_skate"
+        fish_completion.install "completions/skate.fish"
+        man1.install "manpages/skate.1.gz"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.2.0/skate_0.2.0_linux_x86_64.tar.gz"
-      sha256 "075b4217f317792909a12e5f1e36f68a9559ac9c499ba37c3193d4cc3893e177"
+      url "https://github.com/charmbracelet/skate/releases/download/v0.2.1/skate_0.2.1_linux_x86_64.tar.gz"
+      sha256 "4feddbbcb7220c627cd58cdf66f75fcda5d105f5f8ed8043e5f07bea1662411f"
 
       def install
         bin.install "skate"
+        bash_completion.install "completions/skate.bash" => "skate"
+        zsh_completion.install "completions/skate.zsh" => "_skate"
+        fish_completion.install "completions/skate.fish"
+        man1.install "manpages/skate.1.gz"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/skate/releases/download/v0.2.0/skate_0.2.0_linux_armv6.tar.gz"
-      sha256 "8c0a05fb8fae85eb248ff4fdc25eae4b63cb03fb405d0d38c884623adc81e07a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/skate/releases/download/v0.2.1/skate_0.2.1_linux_arm64.tar.gz"
+      sha256 "64b1b321e6aa8a925dc2456fecf5fb68e21c5c0871023fbfef37b713fce03c83"
 
       def install
         bin.install "skate"
+        bash_completion.install "completions/skate.bash" => "skate"
+        zsh_completion.install "completions/skate.zsh" => "_skate"
+        fish_completion.install "completions/skate.fish"
+        man1.install "manpages/skate.1.gz"
       end
     end
   end
