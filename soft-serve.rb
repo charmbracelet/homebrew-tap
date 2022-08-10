@@ -13,7 +13,7 @@ class SoftServe < Formula
       sha256 "42d5c29fef8a224c4fd6330e509ccb859be5dda1c6b49366ad9c694aedf4465b"
 
       def install
-        bin.install "soft-serve"
+        bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
         zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
         fish_completion.install "completions/soft-serve.fish"
@@ -25,7 +25,7 @@ class SoftServe < Formula
       sha256 "b6bdfd5e8b31fe3b175f6fdd3b40b82b704c7b348fe818f51fe6d6b9b439937c"
 
       def install
-        bin.install "soft-serve"
+        bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
         zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
         fish_completion.install "completions/soft-serve.fish"
@@ -40,7 +40,7 @@ class SoftServe < Formula
       sha256 "1c03423e56c7067f028a0e4b7277de66407926fb871e9a28e57428daa82b4705"
 
       def install
-        bin.install "soft-serve"
+        bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
         zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
         fish_completion.install "completions/soft-serve.fish"
@@ -52,7 +52,7 @@ class SoftServe < Formula
       sha256 "537358ab3b260584d77c4ffd40168ca2323ee3eb850f6ff6b1b32af9fdc021c4"
 
       def install
-        bin.install "soft-serve"
+        bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
         zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
         fish_completion.install "completions/soft-serve.fish"
