@@ -8,9 +8,9 @@ class Melt < Formula
   version "0.4.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_Darwin_x86_64.tar.gz"
-      sha256 "383ae9761f6a822e6e56f04035000abf8e08531e032e4574eef4941de145b10c"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_Darwin_arm64.tar.gz"
+      sha256 "6fa66b54ca5e7844d21accddcc19dc0df0c6974fd0df5d044ac0afc0d17fd71e"
 
       def install
         bin.install "melt"
@@ -20,9 +20,9 @@ class Melt < Formula
         man1.install "manpages/melt.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_Darwin_arm64.tar.gz"
-      sha256 "1dc93ea4e3a2b6fa743ccf2ffd8da5871b9ff6704a68fde594a56992da5e4e8e"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_Darwin_x86_64.tar.gz"
+      sha256 "54c1a5d83700ef8dbd712a7530fb763004862ed6597713e5a7c3a843c0ae59c9"
 
       def install
         bin.install "melt"
@@ -35,9 +35,9 @@ class Melt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_linux_x86_64.tar.gz"
-      sha256 "f98510b21e88be9284312e83d8d1e893f52172015afc08fa7ec221fb9ad89ef2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_linux_arm64.tar.gz"
+      sha256 "319c304770358e37199dbfd657b028c312536030bccc01daa3e3f69637fe95e7"
 
       def install
         bin.install "melt"
@@ -47,9 +47,9 @@ class Melt < Formula
         man1.install "manpages/melt.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_linux_arm64.tar.gz"
-      sha256 "85c65739858302aeded4809f008528a2bbbb8efd37f3c874dff2111968dedd4c"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.4.1/melt_0.4.1_linux_x86_64.tar.gz"
+      sha256 "2e78883e73936234d4bbe77b3fd03efdc5f0e3b7fbc6a102ce4373fb488f76f3"
 
       def install
         bin.install "melt"
