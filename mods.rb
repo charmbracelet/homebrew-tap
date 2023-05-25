@@ -5,20 +5,20 @@
 class Mods < Formula
   desc "GPT-4 on the command line"
   homepage "https://charm.sh/"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v0.1.1/mods_Darwin_x86_64.tar.gz"
-      sha256 "0d674a66d5363a5963cc9c57a2e307fc1270cb3bed8e67d729a29e38edb23cda"
+      url "https://github.com/charmbracelet/mods/releases/download/v0.2.0/mods_Darwin_x86_64.tar.gz"
+      sha256 "53086fdde86db96b29c62e1b8bbd4aa79199d6f057df985232dc7f96cac1ffc8"
 
       def install
         bin.install "mods"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/mods/releases/download/v0.1.1/mods_Darwin_arm64.tar.gz"
-      sha256 "861edecc067ffd81b8f3b66935133d236aebc660369dd8d03f0c9c7741cc7bbc"
+      url "https://github.com/charmbracelet/mods/releases/download/v0.2.0/mods_Darwin_arm64.tar.gz"
+      sha256 "3f68b1ed29764026c4613e47fa2fce2d6879dc954d3e0a89ed3a5e96d03c7f79"
 
       def install
         bin.install "mods"
@@ -27,17 +27,17 @@ class Mods < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/mods/releases/download/v0.1.1/mods_Linux_arm64.tar.gz"
-      sha256 "a52a7947671eb9b5b78f9cb788a83391f63409b349249d5628f3dec4e1e85c27"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/mods/releases/download/v0.2.0/mods_Linux_x86_64.tar.gz"
+      sha256 "bfc6f988fa052aaa885e3aeed267c7ede18b847ca11142c3b2e7546cac2c6a46"
 
       def install
         bin.install "mods"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v0.1.1/mods_Linux_x86_64.tar.gz"
-      sha256 "7c5fd0f317e0cd03450a1c522f67ed639fe83beaa08a9221bd7c90bbc6a0ff7b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/mods/releases/download/v0.2.0/mods_Linux_arm64.tar.gz"
+      sha256 "801b227346dfbb036afce1a9d745e89876d644e550db34b22e9990a7f742c14b"
 
       def install
         bin.install "mods"
