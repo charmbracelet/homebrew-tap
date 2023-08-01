@@ -5,12 +5,12 @@
 class Pop < Formula
   desc "Send emails from your terminal. 📬"
   homepage "https://charm.sh/"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.1.0/pop_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "ee16a15e9cae2bb45ca2bc04f8ee97b14bc5ea1e4a006bcdc2cfb95b7c71722e"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/pop/releases/download/v0.2.0/pop_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "f77de26925c8286b9f6cd3f57fc20efe7bb5a9f30413adda5e346f57a46e0db1"
 
       def install
         bin.install "pop"
@@ -20,9 +20,9 @@ class Pop < Formula
         man1.install "manpages/pop.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.1.0/pop_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "1ae978a5b40e3f3341d7d69fcc38f8bf820c1004a00934dc0d34b2d1ea248cb4"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/pop/releases/download/v0.2.0/pop_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "515bdbab3491e717e8897fb5085f15ca2ac89e5c99be9a30f5be5028861ebeb5"
 
       def install
         bin.install "pop"
@@ -35,9 +35,9 @@ class Pop < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.1.0/pop_0.1.0_Linux_arm64.tar.gz"
-      sha256 "0e04253297111da25cc8a8fd2705d66700e2318c62fa5a345f9e7e5bc5d9846e"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/pop/releases/download/v0.2.0/pop_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "6ca76d6554dbe6c6cee6d18ef042c4900c7ba46254b7f971dacd8b664ccbfada"
 
       def install
         bin.install "pop"
@@ -47,9 +47,9 @@ class Pop < Formula
         man1.install "manpages/pop.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.1.0/pop_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "192b622cea01743bc7f32a8f9a9988939754b5e8fffcf884cb679b86ea9da51d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/pop/releases/download/v0.2.0/pop_0.2.0_Linux_arm64.tar.gz"
+      sha256 "dee977361fda3023e7c80af3bc30959e04cd1e003f976737d7914642d3b9a410"
 
       def install
         bin.install "pop"
