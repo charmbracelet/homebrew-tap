@@ -5,12 +5,12 @@
 class Gum < Formula
   desc "A tool for glamorous shell scripts"
   homepage "https://charm.sh/"
-  version "0.12.0"
+  version "0.13.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.12.0/gum_0.12.0_Darwin_x86_64.tar.gz"
-      sha256 "9a25d11be29923ce8924bdbe5acde827be73639011cb001b5e472b0befcbf6c1"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.13.0/gum_0.13.0_Darwin_x86_64.tar.gz"
+      sha256 "7dc9eb6027083d27bb10676ead0cdd7963368a315e505708e4390d159847ce53"
 
       def install
         bin.install "gum"
@@ -21,8 +21,8 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.12.0/gum_0.12.0_Darwin_arm64.tar.gz"
-      sha256 "952ea46b137d6ad613d0849fc8623cccb48f1e24392e135989120787518dbb8c"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.13.0/gum_0.13.0_Darwin_arm64.tar.gz"
+      sha256 "2374dd7d06707c3372e526f2e6c692f826e5bb83095c3d4af0b0e1b5f8aeb7fa"
 
       def install
         bin.install "gum"
@@ -35,9 +35,9 @@ class Gum < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.12.0/gum_0.12.0_Linux_x86_64.tar.gz"
-      sha256 "579b94854ff40efc0be8b6f22d0a73ecd7d59307792742cfb652d35d59cbc782"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/gum/releases/download/v0.13.0/gum_0.13.0_Linux_arm64.tar.gz"
+      sha256 "7bc7b5e1b0efa2f1831c6981bf72262da4733e88116ff671c81faa20b7a94722"
 
       def install
         bin.install "gum"
@@ -47,9 +47,9 @@ class Gum < Formula
         man1.install "manpages/gum.1.gz"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.12.0/gum_0.12.0_Linux_arm64.tar.gz"
-      sha256 "a277bd4b3332393dcc7a5ef33a5dea90ebdecb8f4450ec82e028373c9d8ace2c"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/gum/releases/download/v0.13.0/gum_0.13.0_Linux_x86_64.tar.gz"
+      sha256 "d47eb446fdedb03779d74f7d9ac878d98ffd8ac16cf0449573d7f7c56c670e7f"
 
       def install
         bin.install "gum"
