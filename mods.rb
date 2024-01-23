@@ -5,12 +5,12 @@
 class Mods < Formula
   desc "AI on the command line"
   homepage "https://charm.sh/"
-  version "1.1.0"
+  version "1.2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.1.0/mods_1.1.0_Darwin_arm64.tar.gz"
-      sha256 "5d79f7a93b7dea2cfa87d1d04c43ed7edb2efa18ce5b9f671f967f31552d6a03"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.0/mods_1.2.0_Darwin_arm64.tar.gz"
+      sha256 "aa20ff5e897def3f575c4520cf16135d838517d2b12a91888326d68d27f5e936"
 
       def install
         bin.install "mods"
@@ -20,8 +20,8 @@ class Mods < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.1.0/mods_1.1.0_Darwin_x86_64.tar.gz"
-      sha256 "16ff2d6c894203c8a07880b51f807e1cca301c1abce7ab66f3f2cdf1777f7c6c"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.0/mods_1.2.0_Darwin_x86_64.tar.gz"
+      sha256 "7dae09e95d81eaaa2f49ec90916717d11630a26f6035ad680be9f5938300b961"
 
       def install
         bin.install "mods"
@@ -34,8 +34,8 @@ class Mods < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.1.0/mods_1.1.0_Linux_x86_64.tar.gz"
-      sha256 "4f5577134d9645f50ebe2c06c2eae5ad689492163074773f361da3383d291420"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.0/mods_1.2.0_Linux_x86_64.tar.gz"
+      sha256 "92040a52f831ad25380c6091fa4ba5574cb7cb5ec4947ffae0e075565a447916"
 
       def install
         bin.install "mods"
@@ -45,8 +45,8 @@ class Mods < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.1.0/mods_1.1.0_Linux_arm64.tar.gz"
-      sha256 "e9c21011d282b778355024dc2434a37aaf705bae52f1cca84a82f98806ae01ef"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.0/mods_1.2.0_Linux_arm64.tar.gz"
+      sha256 "83f3f27c6096f4f1b5f3cb758f01c9c7b46e7f8a37ea3bed703876df98a3b84c"
 
       def install
         bin.install "mods"
