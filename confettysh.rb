@@ -5,20 +5,20 @@
 class Confettysh < Formula
   desc "Confetty over SSH"
   homepage "https://charm.sh/"
-  version "1.1.0"
+  version "1.1.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.0/confettysh_1.1.0_Darwin_x86_64.tar.gz"
-      sha256 "295e0128bdf43df60decccb29e606f16ee3a8e103c8dbd76de6cae0597dd93d6"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Darwin_arm64.tar.gz"
+      sha256 "d1dbebfac2942a4c20079760139965f4cbb4635ef9ebe1edc89e119e2cf4b71d"
 
       def install
         bin.install "confettysh"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.0/confettysh_1.1.0_Darwin_arm64.tar.gz"
-      sha256 "2fa01f82ec52e1257bea9b07acd3a071dad3abf43b3163a876401392889ff7f7"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Darwin_x86_64.tar.gz"
+      sha256 "f63e137d732f3571f0e38baadffa30b93d092d1ff32b29a350960fe960f82e1f"
 
       def install
         bin.install "confettysh"
@@ -28,16 +28,16 @@ class Confettysh < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.0/confettysh_1.1.0_Linux_arm64.tar.gz"
-      sha256 "0c7030249f9d54fb6a4e00e8daf6b08bcfd6f2873ef3fe5841f565ad344b6b41"
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Linux_arm64.tar.gz"
+      sha256 "e20cab36f1a6dccbc3cf1a5ba898469d809c9a4fda8038c123f0ca07d43e39fb"
 
       def install
         bin.install "confettysh"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.0/confettysh_1.1.0_Linux_x86_64.tar.gz"
-      sha256 "66d4fc19db9e896534a7abd61f85e183e0d3f1dc42da0e3d0adc2ab72f37cdfc"
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Linux_x86_64.tar.gz"
+      sha256 "99305c8f14974f077dca07656a328e2ddae5b2e55cbd8f6e4d46155756c5fdd8"
 
       def install
         bin.install "confettysh"
