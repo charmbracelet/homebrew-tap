@@ -5,12 +5,12 @@
 class Mods < Formula
   desc "AI on the command line"
   homepage "https://charm.sh/"
-  version "1.2.1"
+  version "1.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.2.1/mods_1.2.1_Darwin_arm64.tar.gz"
-      sha256 "86164bf8e3e466e38517c8a844f7f276bc7359ec69a240bb30b598029eb3753a"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.2/mods_1.2.2_Darwin_x86_64.tar.gz"
+      sha256 "61f4c220da5e78301fd29162fb1b85740e0668dbc74fc962e8d2161e77bf8d31"
 
       def install
         bin.install "mods"
@@ -19,9 +19,9 @@ class Mods < Formula
         fish_completion.install "completions/mods.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.2.1/mods_1.2.1_Darwin_x86_64.tar.gz"
-      sha256 "fb580ff9b2fe0341fca5fd8fd4af06f0abed62b752c8d595df7afe1bf4a80d05"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.2/mods_1.2.2_Darwin_arm64.tar.gz"
+      sha256 "4e459e092acb8ea88ad67fa0d7ccc10819b23dda70b446782a9164356a431bb8"
 
       def install
         bin.install "mods"
@@ -33,9 +33,9 @@ class Mods < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.2.1/mods_1.2.1_Linux_x86_64.tar.gz"
-      sha256 "cda09672776f8f8fbf53e044df26e94a2050541b0076fab968c8dcd502efac78"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.2/mods_1.2.2_Linux_arm64.tar.gz"
+      sha256 "bd9004bfe9c5000915868631b9467d328d75357034510343c97255f751259388"
 
       def install
         bin.install "mods"
@@ -44,9 +44,9 @@ class Mods < Formula
         fish_completion.install "completions/mods.fish"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.2.1/mods_1.2.1_Linux_arm64.tar.gz"
-      sha256 "42e05c05d601ad8c353d7b3eaa9e3f3254b1d77570b389ead848f7c62618d9f4"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/mods/releases/download/v1.2.2/mods_1.2.2_Linux_x86_64.tar.gz"
+      sha256 "5963d3c0d968da318fa9f2fdbe7b14a5dc7a47ad9e3c2f63e229dfc4cf5d47d4"
 
       def install
         bin.install "mods"
