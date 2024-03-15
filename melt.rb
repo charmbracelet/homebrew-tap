@@ -5,12 +5,12 @@
 class Melt < Formula
   desc "Backup and restore Ed25519 SSH keys with seed words"
   homepage "https://charm.sh/"
-  version "0.6.0"
+  version "0.6.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.0/melt_0.6.0_Darwin_x86_64.tar.gz"
-      sha256 "a459279448aae8bc812bcf33eebd7bcc836c4a511a86e94356346c8b1d65ea44"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Darwin_arm64.tar.gz"
+      sha256 "55836cf2cc6a9586030534913e9ecfcf8d3c755c11bdfc74630c46914105a5bc"
 
       def install
         bin.install "melt"
@@ -20,9 +20,9 @@ class Melt < Formula
         man1.install "manpages/melt.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.0/melt_0.6.0_Darwin_arm64.tar.gz"
-      sha256 "7e77fccdc96650c74765082313634e3ef17753b793c1e1aca7f74ae95de18f45"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Darwin_x86_64.tar.gz"
+      sha256 "b83bf591a839efcb6fe1a55fe68403c753a2be3b3cc2645567bab6b782af5c50"
 
       def install
         bin.install "melt"
@@ -35,9 +35,9 @@ class Melt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.0/melt_0.6.0_Linux_arm64.tar.gz"
-      sha256 "221309b26ee449876824f6099dcd3c23557696e8c4777ecb76c8c99d0830e5c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_x86_64.tar.gz"
+      sha256 "84c2a77731ee71a4705e022f644ae95daa2e72c888ee398bebc555417add5caa"
 
       def install
         bin.install "melt"
@@ -47,9 +47,21 @@ class Melt < Formula
         man1.install "manpages/melt.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.0/melt_0.6.0_Linux_x86_64.tar.gz"
-      sha256 "9a29bfe6d03ecb8cb16731643ca8c72541a58e786ae681410abf969b0d5bfe8d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_arm64.tar.gz"
+      sha256 "48421396d9daf065ed5dfafd0c52377407fad12108f4d8ffba3a40365471163d"
+
+      def install
+        bin.install "melt"
+        bash_completion.install "completions/melt.bash" => "melt"
+        zsh_completion.install "completions/melt.zsh" => "_melt"
+        fish_completion.install "completions/melt.fish"
+        man1.install "manpages/melt.1.gz"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_armv7.tar.gz"
+      sha256 "29630f5542281977528e9b8e050e526c120cf2256f45918e228319438220b499"
 
       def install
         bin.install "melt"
