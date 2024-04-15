@@ -5,15 +5,15 @@
 class Vhs < Formula
   desc "A tool for recording terminal GIFs"
   homepage "https://charm.sh/"
-  version "0.7.1"
+  version "0.7.2"
 
   depends_on "ffmpeg"
   depends_on "ttyd"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.1/vhs_0.7.1_Darwin_x86_64.tar.gz"
-      sha256 "0ff15d02ef5283510ad54114d311f0bfc0b09fcd1d740854749056226ebf657d"
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Darwin_x86_64.tar.gz"
+      sha256 "f19ea7f668aa98fb4fd44897cb0f06c304c5275c9b397f9c5b27ff08aeb35949"
 
       def install
         bin.install "vhs"
@@ -24,8 +24,8 @@ class Vhs < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.1/vhs_0.7.1_Darwin_arm64.tar.gz"
-      sha256 "560ab6c9af9efd9437b7c3534afee3ed2ea0a6dce26e6f08d833855eb407d42b"
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Darwin_arm64.tar.gz"
+      sha256 "62f8b06231dcb84834c0b93ce2bd9ee8ec6e86cdff2d04fc230e2918ee5183ca"
 
       def install
         bin.install "vhs"
@@ -38,9 +38,9 @@ class Vhs < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.1/vhs_0.7.1_Linux_arm64.tar.gz"
-      sha256 "a1d3735ed1a5fa37451fb4abf0e06d963cabd1ed26fd5aa359853e12f16671ba"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Linux_x86_64.tar.gz"
+      sha256 "20c677ce9abfd4b4bb7ba883e66c6440758bea700f627f9b5e8297c083fcff4f"
 
       def install
         bin.install "vhs"
@@ -50,9 +50,9 @@ class Vhs < Formula
         man1.install "manpages/vhs.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.1/vhs_0.7.1_Linux_x86_64.tar.gz"
-      sha256 "748443e0b5df89475499330b8943bf650cf0627250290cd5a11d38d3859e96d4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Linux_arm64.tar.gz"
+      sha256 "f2e51dd7b4c9cb1d75283c669bc13a9b59b42090e57cfe4fe32e9f0714136ad6"
 
       def install
         bin.install "vhs"
