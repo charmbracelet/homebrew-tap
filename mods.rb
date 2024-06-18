@@ -5,29 +5,31 @@
 class Mods < Formula
   desc "AI on the command line"
   homepage "https://charm.sh/"
-  version "1.4.0"
+  version "1.4.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/charmbracelet/mods/releases/download/v1.4.0/mods_1.4.0_Darwin_x86_64.tar.gz"
-      sha256 "a78528f9a667503d432843639ae7863e5bf1f2dd5ee318eadf15d92110f2868a"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.4.1/mods_1.4.1_Darwin_x86_64.tar.gz"
+      sha256 "b05829eb3c698b649ae7be508e158476c5936272750d65d075bd82716bbc1c75"
 
       def install
         bin.install "mods"
         bash_completion.install "completions/mods.bash" => "mods"
         zsh_completion.install "completions/mods.zsh" => "_mods"
         fish_completion.install "completions/mods.fish"
+        man1.install "manpages/mods.1.gz"
       end
     end
     on_arm do
-      url "https://github.com/charmbracelet/mods/releases/download/v1.4.0/mods_1.4.0_Darwin_arm64.tar.gz"
-      sha256 "37fef29032e28b7390cf9dcfa58e8103bf24fca60809d3cf5dc794e91ff86895"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.4.1/mods_1.4.1_Darwin_arm64.tar.gz"
+      sha256 "0e28da1b0146837978108956b2740fae0305cb5afaf5006f47752150011048d6"
 
       def install
         bin.install "mods"
         bash_completion.install "completions/mods.bash" => "mods"
         zsh_completion.install "completions/mods.zsh" => "_mods"
         fish_completion.install "completions/mods.fish"
+        man1.install "manpages/mods.1.gz"
       end
     end
   end
@@ -35,27 +37,29 @@ class Mods < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/mods/releases/download/v1.4.0/mods_1.4.0_Linux_x86_64.tar.gz"
-        sha256 "a93ce05bec979cab2ce8c5ad671b651faeb682484f5816301fc7fa9847ca8574"
+        url "https://github.com/charmbracelet/mods/releases/download/v1.4.1/mods_1.4.1_Linux_x86_64.tar.gz"
+        sha256 "81b5c5e80308eb815ee10ddbf1fde4290a987c3f749af7d7000ab6026031672b"
 
         def install
           bin.install "mods"
           bash_completion.install "completions/mods.bash" => "mods"
           zsh_completion.install "completions/mods.zsh" => "_mods"
           fish_completion.install "completions/mods.fish"
+          man1.install "manpages/mods.1.gz"
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/mods/releases/download/v1.4.0/mods_1.4.0_Linux_arm64.tar.gz"
-        sha256 "2e206af2ec952bab7ebc063b498ad76e60d2771e4fe1edccb64f6863d1845bcd"
+        url "https://github.com/charmbracelet/mods/releases/download/v1.4.1/mods_1.4.1_Linux_arm64.tar.gz"
+        sha256 "fb057c89c2fd88470a089abe91c282405194e977d318a5b476e2d95502a31004"
 
         def install
           bin.install "mods"
           bash_completion.install "completions/mods.bash" => "mods"
           zsh_completion.install "completions/mods.zsh" => "_mods"
           fish_completion.install "completions/mods.fish"
+          man1.install "manpages/mods.1.gz"
         end
       end
     end
