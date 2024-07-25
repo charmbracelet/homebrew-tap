@@ -5,12 +5,12 @@
 class Wishlist < Formula
   desc "The SSH directory"
   homepage "https://charm.sh/"
-  version "0.14.1"
+  version "0.15.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.14.1/wishlist_0.14.1_Darwin_arm64.tar.gz"
-      sha256 "8c839c6508deb11bf7f52af8b5b2a2ee63eb70392536ca709e526cfda3582010"
+    on_intel do
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.0/wishlist_0.15.0_Darwin_x86_64.tar.gz"
+      sha256 "f147e76ea587ab8883c9cb083a7fff7b6b1ace65933e1920c179d06378558562"
 
       def install
         bin.install "wishlist"
@@ -20,9 +20,9 @@ class Wishlist < Formula
         man1.install "manpages/wishlist.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.14.1/wishlist_0.14.1_Darwin_x86_64.tar.gz"
-      sha256 "ff22af28d107c04778d8ec797e070211390a75f72a8e1888f52621e6cf0f0639"
+    on_arm do
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.0/wishlist_0.15.0_Darwin_arm64.tar.gz"
+      sha256 "009c8f12f95e4bdb75830705cd797bf8ec9a70204c4dcc9d79db0ed2e630ccfb"
 
       def install
         bin.install "wishlist"
@@ -35,28 +35,46 @@ class Wishlist < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.14.1/wishlist_0.14.1_Linux_arm64.tar.gz"
-      sha256 "9c22db8a5cb9b5999a8a7e17d2dd7cfdf73715f928c3fe1ff8934cc5391e9c6b"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.0/wishlist_0.15.0_Linux_x86_64.tar.gz"
+        sha256 "9da9f637eea01a0cc0bc66e694eaeba00feaa53a47cb8ffaf457c99b33017bdc"
 
-      def install
-        bin.install "wishlist"
-        bash_completion.install "completions/wishlist.bash" => "wishlist"
-        zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
-        fish_completion.install "completions/wishlist.fish"
-        man1.install "manpages/wishlist.1.gz"
+        def install
+          bin.install "wishlist"
+          bash_completion.install "completions/wishlist.bash" => "wishlist"
+          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+          fish_completion.install "completions/wishlist.fish"
+          man1.install "manpages/wishlist.1.gz"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.14.1/wishlist_0.14.1_Linux_x86_64.tar.gz"
-      sha256 "51fa47394e0b3c44463a317b2d13447b95c6bfa9c33fbcb4f67a0291c33ca6e5"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.0/wishlist_0.15.0_Linux_armv7.tar.gz"
+        sha256 "7d2543224a39f882f301f004ed18e0c8d30e2a41ca50a3b9f5793f29d11ed61b"
 
-      def install
-        bin.install "wishlist"
-        bash_completion.install "completions/wishlist.bash" => "wishlist"
-        zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
-        fish_completion.install "completions/wishlist.fish"
-        man1.install "manpages/wishlist.1.gz"
+        def install
+          bin.install "wishlist"
+          bash_completion.install "completions/wishlist.bash" => "wishlist"
+          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+          fish_completion.install "completions/wishlist.fish"
+          man1.install "manpages/wishlist.1.gz"
+        end
+      end
+    end
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.0/wishlist_0.15.0_Linux_arm64.tar.gz"
+        sha256 "6a343b89afbdc79c58b5463212bf27bf0656f2dbbce14bc4a5edd70fd0a8e238"
+
+        def install
+          bin.install "wishlist"
+          bash_completion.install "completions/wishlist.bash" => "wishlist"
+          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+          fish_completion.install "completions/wishlist.fish"
+          man1.install "manpages/wishlist.1.gz"
+        end
       end
     end
   end
