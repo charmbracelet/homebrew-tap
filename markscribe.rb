@@ -5,20 +5,20 @@
 class Markscribe < Formula
   desc "Your personal markdown scribe with template-engine and Git(Hub) & RSS powers"
   homepage "https://charm.sh/"
-  version "0.7.2"
+  version "0.8.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/charmbracelet/markscribe/releases/download/v0.7.2/markscribe_0.7.2_Darwin_x86_64.tar.gz"
-      sha256 "05eb176b74169e9658a321067a41eb54de6744f2a3e2ac4683e787cf4ea61bf7"
+      url "https://github.com/charmbracelet/markscribe/releases/download/v0.8.0/markscribe_0.8.0_Darwin_x86_64.tar.gz"
+      sha256 "c2fc07e3a9feed5eed5d20e945a83b71f364764c068e9dcac6b52f696ec45c8e"
 
       def install
         bin.install "markscribe"
       end
     end
     on_arm do
-      url "https://github.com/charmbracelet/markscribe/releases/download/v0.7.2/markscribe_0.7.2_Darwin_arm64.tar.gz"
-      sha256 "39b15cdbb2b07a0659c0508c2d3f3439eb177f44436413cae1e09979442794c0"
+      url "https://github.com/charmbracelet/markscribe/releases/download/v0.8.0/markscribe_0.8.0_Darwin_arm64.tar.gz"
+      sha256 "c8665edf4c2f825fb6929cf8cfac5c82b53afd303e4998a3f1a925e563d9daba"
 
       def install
         bin.install "markscribe"
@@ -29,8 +29,8 @@ class Markscribe < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/markscribe/releases/download/v0.7.2/markscribe_0.7.2_Linux_x86_64.tar.gz"
-        sha256 "b7ec74a14b9a4e5645cee32739852f6c986b20392575ddbb0cfe2d7302cf433c"
+        url "https://github.com/charmbracelet/markscribe/releases/download/v0.8.0/markscribe_0.8.0_Linux_x86_64.tar.gz"
+        sha256 "0d57149d0f27f4c6f97030378dc3c7fbef1d20926b434b4e19fb76ea78664709"
 
         def install
           bin.install "markscribe"
@@ -39,8 +39,8 @@ class Markscribe < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/markscribe/releases/download/v0.7.2/markscribe_0.7.2_Linux_arm64.tar.gz"
-        sha256 "73f809ef35519189cf40034244c0d34596c8b7500eecc92c567f7224affd42c6"
+        url "https://github.com/charmbracelet/markscribe/releases/download/v0.8.0/markscribe_0.8.0_Linux_arm64.tar.gz"
+        sha256 "de9be6978220d8057365bfe848655016624ddb3549ca521d88f6e544754ec768"
 
         def install
           bin.install "markscribe"
