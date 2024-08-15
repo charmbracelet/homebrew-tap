@@ -5,12 +5,12 @@
 class Melt < Formula
   desc "Backup and restore Ed25519 SSH keys with seed words"
   homepage "https://charm.sh/"
-  version "0.6.1"
+  version "0.6.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Darwin_arm64.tar.gz"
-      sha256 "55836cf2cc6a9586030534913e9ecfcf8d3c755c11bdfc74630c46914105a5bc"
+    on_intel do
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.2/melt_0.6.2_Darwin_x86_64.tar.gz"
+      sha256 "e96ce7634f028ca60c89239795d0e0d4a02040bf62d1d91474fc2ac8bea677e5"
 
       def install
         bin.install "melt"
@@ -20,9 +20,9 @@ class Melt < Formula
         man1.install "manpages/melt.1.gz"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Darwin_x86_64.tar.gz"
-      sha256 "b83bf591a839efcb6fe1a55fe68403c753a2be3b3cc2645567bab6b782af5c50"
+    on_arm do
+      url "https://github.com/charmbracelet/melt/releases/download/v0.6.2/melt_0.6.2_Darwin_arm64.tar.gz"
+      sha256 "64a35de143145d4ffd5b21804a5d64a1a677db9ddf2539cdc29a5e2cff9d027d"
 
       def install
         bin.install "melt"
@@ -35,40 +35,46 @@ class Melt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_x86_64.tar.gz"
-      sha256 "84c2a77731ee71a4705e022f644ae95daa2e72c888ee398bebc555417add5caa"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/melt/releases/download/v0.6.2/melt_0.6.2_Linux_x86_64.tar.gz"
+        sha256 "82f543dcade2244a86196a506a28dcd41b55d5e0be71d692d291fc4f6803ac82"
 
-      def install
-        bin.install "melt"
-        bash_completion.install "completions/melt.bash" => "melt"
-        zsh_completion.install "completions/melt.zsh" => "_melt"
-        fish_completion.install "completions/melt.fish"
-        man1.install "manpages/melt.1.gz"
+        def install
+          bin.install "melt"
+          bash_completion.install "completions/melt.bash" => "melt"
+          zsh_completion.install "completions/melt.zsh" => "_melt"
+          fish_completion.install "completions/melt.fish"
+          man1.install "manpages/melt.1.gz"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_arm64.tar.gz"
-      sha256 "48421396d9daf065ed5dfafd0c52377407fad12108f4d8ffba3a40365471163d"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/melt/releases/download/v0.6.2/melt_0.6.2_Linux_armv7.tar.gz"
+        sha256 "deaa82d0ba3e8cf67e3ea9e1ad4cd2267f80bbe23d9ec854e628004915c72d24"
 
-      def install
-        bin.install "melt"
-        bash_completion.install "completions/melt.bash" => "melt"
-        zsh_completion.install "completions/melt.zsh" => "_melt"
-        fish_completion.install "completions/melt.fish"
-        man1.install "manpages/melt.1.gz"
+        def install
+          bin.install "melt"
+          bash_completion.install "completions/melt.bash" => "melt"
+          zsh_completion.install "completions/melt.zsh" => "_melt"
+          fish_completion.install "completions/melt.fish"
+          man1.install "manpages/melt.1.gz"
+        end
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/melt/releases/download/v0.6.1/melt_0.6.1_Linux_armv7.tar.gz"
-      sha256 "29630f5542281977528e9b8e050e526c120cf2256f45918e228319438220b499"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/melt/releases/download/v0.6.2/melt_0.6.2_Linux_arm64.tar.gz"
+        sha256 "12cdf4ee09b5fea8bba9388495912c19c784c844f407dddadb86e1d2b7b63acd"
 
-      def install
-        bin.install "melt"
-        bash_completion.install "completions/melt.bash" => "melt"
-        zsh_completion.install "completions/melt.zsh" => "_melt"
-        fish_completion.install "completions/melt.fish"
-        man1.install "manpages/melt.1.gz"
+        def install
+          bin.install "melt"
+          bash_completion.install "completions/melt.bash" => "melt"
+          zsh_completion.install "completions/melt.zsh" => "_melt"
+          fish_completion.install "completions/melt.fish"
+          man1.install "manpages/melt.1.gz"
+        end
       end
     end
   end
