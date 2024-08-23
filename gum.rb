@@ -5,12 +5,12 @@
 class Gum < Formula
   desc "A tool for glamorous shell scripts"
   homepage "https://charm.sh/"
-  version "0.14.3"
+  version "0.14.4"
 
   on_macos do
     on_intel do
-      url "https://github.com/charmbracelet/gum/releases/download/v0.14.3/gum_0.14.3_Darwin_x86_64.tar.gz"
-      sha256 "b7e5268a5bf28de1a38e1da470eb1dd21f1c086487904ca4af9b6cea620dca5d"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.14.4/gum_0.14.4_Darwin_x86_64.tar.gz"
+      sha256 "300ba50a52eba5ff2bae3124b4818ecd6e4946cb62f5859f51d059300358e0eb"
 
       def install
         bin.install "gum"
@@ -21,8 +21,8 @@ class Gum < Formula
       end
     end
     on_arm do
-      url "https://github.com/charmbracelet/gum/releases/download/v0.14.3/gum_0.14.3_Darwin_arm64.tar.gz"
-      sha256 "75c6329fdfa28ffe510c665133925d0ecb18f6543a26679c5a986ae7298e75f3"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.14.4/gum_0.14.4_Darwin_arm64.tar.gz"
+      sha256 "a0a7867f2bd4c61ecd97faeb2cb9e0a4eef2ec4c09a69d43cc8fca3b8df7a698"
 
       def install
         bin.install "gum"
@@ -37,8 +37,8 @@ class Gum < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.14.3/gum_0.14.3_Linux_x86_64.tar.gz"
-        sha256 "76836c1ba0f5aaebed5426a02b986c890cc3560c6165aed5894758671115aeb1"
+        url "https://github.com/charmbracelet/gum/releases/download/v0.14.4/gum_0.14.4_Linux_x86_64.tar.gz"
+        sha256 "617914431e20473fd6b097b123b2e0dedaba8a9d2ae9fb59eaeb4206a95c3381"
 
         def install
           bin.install "gum"
@@ -51,8 +51,8 @@ class Gum < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.14.3/gum_0.14.3_Linux_armv7.tar.gz"
-        sha256 "3acfdfa444f32a8a17d7be2c6583bfe338f1670ba53f8c9669207b5c256d1657"
+        url "https://github.com/charmbracelet/gum/releases/download/v0.14.4/gum_0.14.4_Linux_armv7.tar.gz"
+        sha256 "561e6709e5f4e623389b211df2bee979bcdde71f535a5e16f776a46fb72c5015"
 
         def install
           bin.install "gum"
@@ -65,8 +65,8 @@ class Gum < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.14.3/gum_0.14.3_Linux_arm64.tar.gz"
-        sha256 "b697ef09ab0bacc99a4a78a32da2275d5add2d4e7b861389a5607bb7dae90f97"
+        url "https://github.com/charmbracelet/gum/releases/download/v0.14.4/gum_0.14.4_Linux_arm64.tar.gz"
+        sha256 "4f937eb8e06c4903ce4a2a0d6a274afbcba77fd13bea2f648c613ec2e3d1a2da"
 
         def install
           bin.install "gum"
