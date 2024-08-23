@@ -5,12 +5,12 @@
 class Glow < Formula
   desc "Render markdown on the CLI, with pizzazz!"
   homepage "https://charm.sh/"
-  version "1.5.1"
+  version "2.0.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_Darwin_x86_64.tar.gz"
-      sha256 "07f23d1609d502574df99259053f24372d8ba2315382528cb3be31661105ca44"
+    on_intel do
+      url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Darwin_x86_64.tar.gz"
+      sha256 "64d892ca7866752f260722ca83f92746446a03e733cedbc2897c353951abe274"
 
       def install
         bin.install "glow"
@@ -20,9 +20,9 @@ class Glow < Formula
         man1.install "manpages/glow.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_Darwin_arm64.tar.gz"
-      sha256 "08ed18eae66c7bba7f02952d69b0fdb8edcabb0830c85a98ad963f2422c3334e"
+    on_arm do
+      url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Darwin_arm64.tar.gz"
+      sha256 "04175e0e7e949fd5a0a340cbb11be057c04ae7c49ea85f06679a71340cc4bcb6"
 
       def install
         bin.install "glow"
@@ -35,28 +35,32 @@ class Glow < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_Linux_arm64.tar.gz"
-      sha256 "33661a7d97925724339d4f06e633df7dbc98e8a70320668236895be1b4c8125f"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Linux_x86_64.tar.gz"
+        sha256 "c16067fc16455211d9a239e931b00982fb883aef4b2c89cfa30a992ef2058ae5"
 
-      def install
-        bin.install "glow"
-        bash_completion.install "completions/glow.bash" => "glow"
-        zsh_completion.install "completions/glow.zsh" => "_glow"
-        fish_completion.install "completions/glow.fish"
-        man1.install "manpages/glow.1.gz"
+        def install
+          bin.install "glow"
+          bash_completion.install "completions/glow.bash" => "glow"
+          zsh_completion.install "completions/glow.zsh" => "_glow"
+          fish_completion.install "completions/glow.fish"
+          man1.install "manpages/glow.1.gz"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_Linux_x86_64.tar.gz"
-      sha256 "d224be006fc4ee361c1d1a85dbd46c269372b76c5413e2a9bfd0f7fe52c66f78"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Linux_arm64.tar.gz"
+        sha256 "69317a393ee8e6c64e2eb49718d053d5d98e1bf3e67b89e8965ead0e8b12004c"
 
-      def install
-        bin.install "glow"
-        bash_completion.install "completions/glow.bash" => "glow"
-        zsh_completion.install "completions/glow.zsh" => "_glow"
-        fish_completion.install "completions/glow.fish"
-        man1.install "manpages/glow.1.gz"
+        def install
+          bin.install "glow"
+          bash_completion.install "completions/glow.bash" => "glow"
+          zsh_completion.install "completions/glow.zsh" => "_glow"
+          fish_completion.install "completions/glow.fish"
+          man1.install "manpages/glow.1.gz"
+        end
       end
     end
   end
