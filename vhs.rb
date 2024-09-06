@@ -5,15 +5,15 @@
 class Vhs < Formula
   desc "A tool for recording terminal GIFs"
   homepage "https://charm.sh/"
-  version "0.7.2"
+  version "0.8.0"
 
   depends_on "ffmpeg"
   depends_on "ttyd"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Darwin_x86_64.tar.gz"
-      sha256 "f19ea7f668aa98fb4fd44897cb0f06c304c5275c9b397f9c5b27ff08aeb35949"
+    on_intel do
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.8.0/vhs_0.8.0_Darwin_x86_64.tar.gz"
+      sha256 "0bf046291622fe4efc267fe5b429a0bf29116f40687f0525eaf9c845bf32b0df"
 
       def install
         bin.install "vhs"
@@ -23,9 +23,9 @@ class Vhs < Formula
         man1.install "manpages/vhs.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Darwin_arm64.tar.gz"
-      sha256 "62f8b06231dcb84834c0b93ce2bd9ee8ec6e86cdff2d04fc230e2918ee5183ca"
+    on_arm do
+      url "https://github.com/charmbracelet/vhs/releases/download/v0.8.0/vhs_0.8.0_Darwin_arm64.tar.gz"
+      sha256 "5997b48752358954439ad6fc1f2da21b77e52d5412240c13b7d1ec73114a2188"
 
       def install
         bin.install "vhs"
@@ -38,28 +38,32 @@ class Vhs < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Linux_x86_64.tar.gz"
-      sha256 "20c677ce9abfd4b4bb7ba883e66c6440758bea700f627f9b5e8297c083fcff4f"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/vhs/releases/download/v0.8.0/vhs_0.8.0_Linux_x86_64.tar.gz"
+        sha256 "0371e5b57b335330272aba6992656b6785e2e5d8538d6e4d85dcfd9f70400c5b"
 
-      def install
-        bin.install "vhs"
-        bash_completion.install "completions/vhs.bash" => "vhs"
-        zsh_completion.install "completions/vhs.zsh" => "_vhs"
-        fish_completion.install "completions/vhs.fish"
-        man1.install "manpages/vhs.1.gz"
+        def install
+          bin.install "vhs"
+          bash_completion.install "completions/vhs.bash" => "vhs"
+          zsh_completion.install "completions/vhs.zsh" => "_vhs"
+          fish_completion.install "completions/vhs.fish"
+          man1.install "manpages/vhs.1.gz"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/vhs/releases/download/v0.7.2/vhs_0.7.2_Linux_arm64.tar.gz"
-      sha256 "f2e51dd7b4c9cb1d75283c669bc13a9b59b42090e57cfe4fe32e9f0714136ad6"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/vhs/releases/download/v0.8.0/vhs_0.8.0_Linux_arm64.tar.gz"
+        sha256 "8625f2b02ba5a7626841e3045be767ca1da30920fb567b6488387c1a47853db9"
 
-      def install
-        bin.install "vhs"
-        bash_completion.install "completions/vhs.bash" => "vhs"
-        zsh_completion.install "completions/vhs.zsh" => "_vhs"
-        fish_completion.install "completions/vhs.fish"
-        man1.install "manpages/vhs.1.gz"
+        def install
+          bin.install "vhs"
+          bash_completion.install "completions/vhs.bash" => "vhs"
+          zsh_completion.install "completions/vhs.zsh" => "_vhs"
+          fish_completion.install "completions/vhs.fish"
+          man1.install "manpages/vhs.1.gz"
+        end
       end
     end
   end
