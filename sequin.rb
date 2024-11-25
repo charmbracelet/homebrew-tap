@@ -5,20 +5,20 @@
 class Sequin < Formula
   desc "Human-readable ANSI sequences."
   homepage "https://charm.sh/"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/charmbracelet/sequin/releases/download/v0.1.1/sequin_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "049bf0807f3f7f8872b276c3feda9c2305159215fd36dc093918dca8cdcc94a3"
+      url "https://github.com/charmbracelet/sequin/releases/download/v0.2.0/sequin_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "c2a406c65f7e25fd41152b1dab6c7ce2ad3653d9f3debba26f4f5875b572f566"
 
       def install
         bin.install "sequin"
       end
     end
     on_arm do
-      url "https://github.com/charmbracelet/sequin/releases/download/v0.1.1/sequin_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "e00ce72f7915c8b05c2a6c516184a768807e5284af36781a12de948a23a01001"
+      url "https://github.com/charmbracelet/sequin/releases/download/v0.2.0/sequin_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "e7098f5491763b767e34a9f2dea5651928a330b7018c3f3543aca4853d3933f3"
 
       def install
         bin.install "sequin"
@@ -29,8 +29,8 @@ class Sequin < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/sequin/releases/download/v0.1.1/sequin_0.1.1_Linux_x86_64.tar.gz"
-        sha256 "47e804fb43827536f02835add697116eb64eb063aec46c49ea7417e883e87d5e"
+        url "https://github.com/charmbracelet/sequin/releases/download/v0.2.0/sequin_0.2.0_Linux_x86_64.tar.gz"
+        sha256 "9cb5434a78a73e19b4a5535008e4c66d11653b55b097b8abf3b8199392eb9d4f"
 
         def install
           bin.install "sequin"
@@ -39,8 +39,8 @@ class Sequin < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/sequin/releases/download/v0.1.1/sequin_0.1.1_Linux_arm64.tar.gz"
-        sha256 "07678372a6b07b3549d00c6736e7657ffe2ed5c9df4e5d0ca313cdea07525419"
+        url "https://github.com/charmbracelet/sequin/releases/download/v0.2.0/sequin_0.2.0_Linux_arm64.tar.gz"
+        sha256 "2abcabccae8e444a3c7261ea6e34b1708522b331b450d8cb475361053482c24c"
 
         def install
           bin.install "sequin"
