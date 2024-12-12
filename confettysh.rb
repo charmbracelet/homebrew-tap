@@ -5,20 +5,20 @@
 class Confettysh < Formula
   desc "Confetty over SSH"
   homepage "https://charm.sh/"
-  version "1.1.1"
+  version "1.1.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Darwin_arm64.tar.gz"
-      sha256 "d1dbebfac2942a4c20079760139965f4cbb4635ef9ebe1edc89e119e2cf4b71d"
+    on_intel do
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.2/confettysh_1.1.2_Darwin_x86_64.tar.gz"
+      sha256 "0dbd00e3eb9a0e357f03344401f1ca856e2c347b859687837ce2a6611de45fac"
 
       def install
         bin.install "confettysh"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Darwin_x86_64.tar.gz"
-      sha256 "f63e137d732f3571f0e38baadffa30b93d092d1ff32b29a350960fe960f82e1f"
+    on_arm do
+      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.2/confettysh_1.1.2_Darwin_arm64.tar.gz"
+      sha256 "b2328d95933134a17f632cb97b9936a265b5ef84bdafe95992037ef0b7000c10"
 
       def install
         bin.install "confettysh"
@@ -27,20 +27,24 @@ class Confettysh < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Linux_arm64.tar.gz"
-      sha256 "e20cab36f1a6dccbc3cf1a5ba898469d809c9a4fda8038c123f0ca07d43e39fb"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.2/confettysh_1.1.2_Linux_x86_64.tar.gz"
+        sha256 "60129eaee37ba6a145591cc50055643620e21e96996124817fb657375f4ce4b3"
 
-      def install
-        bin.install "confettysh"
+        def install
+          bin.install "confettysh"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.1/confettysh_1.1.1_Linux_x86_64.tar.gz"
-      sha256 "99305c8f14974f077dca07656a328e2ddae5b2e55cbd8f6e4d46155756c5fdd8"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/charmbracelet/confettysh/releases/download/v1.1.2/confettysh_1.1.2_Linux_arm64.tar.gz"
+        sha256 "f73b9bb461a1eaeefecdd109a93f4bba4700c017b0bc9e185342e38bd57b3827"
 
-      def install
-        bin.install "confettysh"
+        def install
+          bin.install "confettysh"
+        end
       end
     end
   end
