@@ -5,20 +5,20 @@
 class Sequin < Formula
   desc "Human-readable ANSI sequences."
   homepage "https://charm.sh/"
-  version "0.3.0"
+  version "0.3.1"
 
   on_macos do
-    on_intel do
-      url "https://github.com/charmbracelet/sequin/releases/download/v0.3.0/sequin_0.3.0_Darwin_x86_64.tar.gz"
-      sha256 "ce73226f40c3d5fc1bec263185e2d8c79462ba9dd0edeb730211ca86aa1b2471"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/sequin/releases/download/v0.3.1/sequin_0.3.1_Darwin_x86_64.tar.gz"
+      sha256 "f67298c0fa676f6c395370883beb97569d9dc278b2f356572f66e871c69f4685"
 
       def install
         bin.install "sequin"
       end
     end
-    on_arm do
-      url "https://github.com/charmbracelet/sequin/releases/download/v0.3.0/sequin_0.3.0_Darwin_arm64.tar.gz"
-      sha256 "3369e7732989b74f7b3382017f73802ec239451750e2c13605b1a5443ff72fdf"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/sequin/releases/download/v0.3.1/sequin_0.3.1_Darwin_arm64.tar.gz"
+      sha256 "1566411cbb4d14c27fbc6d836928663c69bba4636531bf853285f4b3651e78f0"
 
       def install
         bin.install "sequin"
@@ -27,20 +27,20 @@ class Sequin < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/sequin/releases/download/v0.3.0/sequin_0.3.0_Linux_x86_64.tar.gz"
-        sha256 "1f5e9d002864119d52a89121f9f17e796b13c639834d29c03618f30807b13daf"
+        url "https://github.com/charmbracelet/sequin/releases/download/v0.3.1/sequin_0.3.1_Linux_x86_64.tar.gz"
+        sha256 "62a5f1378421a0fef4d747eb29cb9e85d5f8597469df612ee26b21c012556f82"
 
         def install
           bin.install "sequin"
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/sequin/releases/download/v0.3.0/sequin_0.3.0_Linux_arm64.tar.gz"
-        sha256 "d7b2d0740dabce016689db6a335dd2e19bf0e99087145ab080265be8e8a4f4fa"
+        url "https://github.com/charmbracelet/sequin/releases/download/v0.3.1/sequin_0.3.1_Linux_arm64.tar.gz"
+        sha256 "25f56f76a73e37cb5b3d4d5b7740b7e1c4c4c8fa45c407c0723542b996df369d"
 
         def install
           bin.install "sequin"
