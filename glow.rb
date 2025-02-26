@@ -5,12 +5,12 @@
 class Glow < Formula
   desc "Render markdown on the CLI, with pizzazz!"
   homepage "https://charm.sh/"
-  version "2.0.0"
+  version "2.1.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Darwin_x86_64.tar.gz"
-      sha256 "64d892ca7866752f260722ca83f92746446a03e733cedbc2897c353951abe274"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_Darwin_x86_64.tar.gz"
+      sha256 "46d4f2b6111821208ccf8c012d6689e1742889e02abf0d9ac3042b36fa199f30"
 
       def install
         bin.install "glow"
@@ -20,9 +20,9 @@ class Glow < Formula
         man1.install "manpages/glow.1.gz"
       end
     end
-    on_arm do
-      url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Darwin_arm64.tar.gz"
-      sha256 "04175e0e7e949fd5a0a340cbb11be057c04ae7c49ea85f06679a71340cc4bcb6"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_Darwin_arm64.tar.gz"
+      sha256 "0cc5fcb32fc2090134261a162ec336574f41c4693625253abe977436a498a937"
 
       def install
         bin.install "glow"
@@ -35,10 +35,10 @@ class Glow < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Linux_x86_64.tar.gz"
-        sha256 "c16067fc16455211d9a239e931b00982fb883aef4b2c89cfa30a992ef2058ae5"
+        url "https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_Linux_x86_64.tar.gz"
+        sha256 "8f4e9a1c7ed8f8a0f44128d27faae90ab484be7ff109251422c3ba7f9d764a56"
 
         def install
           bin.install "glow"
@@ -49,10 +49,10 @@ class Glow < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_Linux_arm64.tar.gz"
-        sha256 "69317a393ee8e6c64e2eb49718d053d5d98e1bf3e67b89e8965ead0e8b12004c"
+        url "https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_Linux_arm64.tar.gz"
+        sha256 "18d051581bfa1a9a9004657d9e67f259f63d7021dd549e9e7c7afd556dd27a87"
 
         def install
           bin.install "glow"
