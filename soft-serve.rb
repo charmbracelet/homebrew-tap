@@ -13,7 +13,7 @@ class SoftServe < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Darwin_x86_64.tar.gz"
-      sha256 "bcf8493201c6b48bde5be8fca4e816f284d1d014ee1670893e400c2b0f1b9524"
+      sha256 "353efc4494a1822a051c66f91ed085e6e77f3da28ff8262f84156260da79f59b"
 
       def install
         bin.install "soft"
@@ -25,7 +25,7 @@ class SoftServe < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Darwin_arm64.tar.gz"
-      sha256 "cdb13f8853a33dea3966faa3eee1b659326153c292a80e153ed348e9e69becca"
+      sha256 "174f454a2d58cb500b584179ae07f9960192a2cc2804262682961bed9be32404"
 
       def install
         bin.install "soft"
@@ -41,7 +41,7 @@ class SoftServe < Formula
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Linux_x86_64.tar.gz"
-        sha256 "d347f70a5ec504e8463bb751ed024de41a6b9494e3a345822563525338f5fcd9"
+        sha256 "2de5d250b978d66a34b15fe918c7b0e9108b5fc70dee1762abc702c185280ca1"
 
         def install
           bin.install "soft"
@@ -55,7 +55,7 @@ class SoftServe < Formula
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Linux_arm64.tar.gz"
-        sha256 "25e62ecf5d80a9ae7158e251c445e1d6058e595131650833ed53bcb994b5c657"
+        sha256 "3a8e29ff2d1a53f518eb104b16771af2f73be5e5267a24fd9c49b9f50c691ecb"
 
         def install
           bin.install "soft"
