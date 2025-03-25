@@ -5,15 +5,15 @@
 class SoftServe < Formula
   desc "A tasty, self-hostable Git server for the command line🍦"
   homepage "https://charm.sh/"
-  version "0.8.4"
+  version "0.8.5"
 
   depends_on "bash"
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Darwin_x86_64.tar.gz"
-      sha256 "7848b25e2ad506f36bbb5adb67d418f6ece04dbacc34a8855f95402635e01af3"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Darwin_x86_64.tar.gz"
+      sha256 "e2674626dd3eb9479cb7011f14fc5b76c21f9535e1aadfdedcae6cbc53495587"
 
       def install
         bin.install "soft"
@@ -24,8 +24,8 @@ class SoftServe < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Darwin_arm64.tar.gz"
-      sha256 "b98563d9c1e23ba347f635854fd3b0d7fe986e586adb4c6b0010f7b12f8e36b0"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Darwin_arm64.tar.gz"
+      sha256 "6e7bffba6451910eaadbbd861a5cead022b38f0bd077d33e90ae556dbed3c9e4"
 
       def install
         bin.install "soft"
@@ -40,8 +40,8 @@ class SoftServe < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Linux_x86_64.tar.gz"
-        sha256 "822a2902f9f6e3da827ceccb0610247c6cad3e914369579c55a9f967ba6a66e1"
+        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Linux_x86_64.tar.gz"
+        sha256 "0c5a166847218db177d85da3e454a393cf82acf7674e9f2070ee49aedb1dca68"
 
         def install
           bin.install "soft"
@@ -54,8 +54,8 @@ class SoftServe < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.4/soft-serve_0.8.4_Linux_arm64.tar.gz"
-        sha256 "39f31c66d28a0c4b7d413f04ed0011b42f3498b47d1092024e02d04cd0f81d52"
+        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Linux_arm64.tar.gz"
+        sha256 "e56b289db62891e73648179b2d78ee4b618b64f086b8301a5c6e7364ab718133"
 
         def install
           bin.install "soft"
