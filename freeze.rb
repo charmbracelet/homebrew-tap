@@ -5,20 +5,20 @@
 class Freeze < Formula
   desc "Generate images of code and terminal output."
   homepage "https://charm.sh/"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/freeze/releases/download/v0.2.1/freeze_0.2.1_Darwin_x86_64.tar.gz"
-      sha256 "32e1cb91c1d21c76d2aaadd8bcb3529922fee259d6bef8837e2cebd1855fe32c"
+      url "https://github.com/charmbracelet/freeze/releases/download/v0.2.2/freeze_0.2.2_Darwin_x86_64.tar.gz"
+      sha256 "7ba01bc3f7f255bee2fe84847e8beeb1caa84914a49f4cf32e0147693d5e385f"
 
       def install
         bin.install "freeze"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/freeze/releases/download/v0.2.1/freeze_0.2.1_Darwin_arm64.tar.gz"
-      sha256 "142911b3ff802ceb88b6ab4482f809c13a2438e9dd174244940553bc4c63603a"
+      url "https://github.com/charmbracelet/freeze/releases/download/v0.2.2/freeze_0.2.2_Darwin_arm64.tar.gz"
+      sha256 "6936ebad96dda73a6c952d7e945106916c4d4345334828109b4db6ddbb9aabee"
 
       def install
         bin.install "freeze"
@@ -29,8 +29,8 @@ class Freeze < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/freeze/releases/download/v0.2.1/freeze_0.2.1_Linux_x86_64.tar.gz"
-        sha256 "388bd503905709390e083f2573e21c17c0d2b04a2e4f6ff75cb979992a6d07db"
+        url "https://github.com/charmbracelet/freeze/releases/download/v0.2.2/freeze_0.2.2_Linux_x86_64.tar.gz"
+        sha256 "012fdbdd16c0c19570f9052aac34d16d93d7d0d3b565b05374cc59492f53539b"
 
         def install
           bin.install "freeze"
@@ -39,8 +39,8 @@ class Freeze < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/freeze/releases/download/v0.2.1/freeze_0.2.1_Linux_arm64.tar.gz"
-        sha256 "c8013f611cdcf84d531c78d1765176c212e25587c090837e603cc5a15d184eed"
+        url "https://github.com/charmbracelet/freeze/releases/download/v0.2.2/freeze_0.2.2_Linux_arm64.tar.gz"
+        sha256 "ba1164c2e6d573af32df13ddc5868f7cdfc8b9992f26f53695787ca5f4274023"
 
         def install
           bin.install "freeze"
