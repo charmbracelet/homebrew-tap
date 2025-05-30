@@ -5,12 +5,12 @@
 class Gum < Formula
   desc "A tool for glamorous shell scripts"
   homepage "https://charm.sh/"
-  version "0.16.0"
+  version "0.16.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.16.0/gum_0.16.0_Darwin_x86_64.tar.gz"
-      sha256 "8009022b373768ff81d80f800cb051b461837bd9ccf7ddd4d42ea159732794d8"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.16.1/gum_0.16.1_Darwin_x86_64.tar.gz"
+      sha256 "bd35270e430f5c7a542e67958ca017edca843340e118de4520aaf7c22829e9f6"
 
       def install
         bin.install "gum"
@@ -21,8 +21,8 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.16.0/gum_0.16.0_Darwin_arm64.tar.gz"
-      sha256 "cc2b557f6b8a0966f15acf7e5bd5c2e1b76f049fa461d205b17927a74f11b283"
+      url "https://github.com/charmbracelet/gum/releases/download/v0.16.1/gum_0.16.1_Darwin_arm64.tar.gz"
+      sha256 "75217dacd3bbbe8e9e6f112691321a7ba3b7fd9f783140072f80649dcdba166b"
 
       def install
         bin.install "gum"
@@ -35,46 +35,37 @@ class Gum < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.16.0/gum_0.16.0_Linux_x86_64.tar.gz"
-        sha256 "7a403e5671bb0e00f93f7b6aa89ec46f7adbda6f7df5c7bad99a01826903b124"
-
-        def install
-          bin.install "gum"
-          bash_completion.install "completions/gum.bash" => "gum"
-          zsh_completion.install "completions/gum.zsh" => "_gum"
-          fish_completion.install "completions/gum.fish"
-          man1.install "manpages/gum.1.gz"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/gum/releases/download/v0.16.1/gum_0.16.1_Linux_x86_64.tar.gz"
+      sha256 "521993dae18ef6d8b933febe6298130f9af077c42165e0543a2d36569ba7b130"
+      def install
+        bin.install "gum"
+        bash_completion.install "completions/gum.bash" => "gum"
+        zsh_completion.install "completions/gum.zsh" => "_gum"
+        fish_completion.install "completions/gum.fish"
+        man1.install "manpages/gum.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.16.0/gum_0.16.0_Linux_armv7.tar.gz"
-        sha256 "2ab5da34ae54d459c2e119a4c4de7e3f5e47471d4ad4957e52b54d4289518da5"
-
-        def install
-          bin.install "gum"
-          bash_completion.install "completions/gum.bash" => "gum"
-          zsh_completion.install "completions/gum.zsh" => "_gum"
-          fish_completion.install "completions/gum.fish"
-          man1.install "manpages/gum.1.gz"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/gum/releases/download/v0.16.1/gum_0.16.1_Linux_armv7.tar.gz"
+      sha256 "275628ba582ac50f08e5c34f95bb3306df1709288b61bc32f23eb74e2b57367b"
+      def install
+        bin.install "gum"
+        bash_completion.install "completions/gum.bash" => "gum"
+        zsh_completion.install "completions/gum.zsh" => "_gum"
+        fish_completion.install "completions/gum.fish"
+        man1.install "manpages/gum.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/gum/releases/download/v0.16.0/gum_0.16.0_Linux_arm64.tar.gz"
-        sha256 "c28e0a29b5da25df44b95e3f39c773bbb00b9583916431d5e7a762faf011bd0e"
-
-        def install
-          bin.install "gum"
-          bash_completion.install "completions/gum.bash" => "gum"
-          zsh_completion.install "completions/gum.zsh" => "_gum"
-          fish_completion.install "completions/gum.fish"
-          man1.install "manpages/gum.1.gz"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/gum/releases/download/v0.16.1/gum_0.16.1_Linux_arm64.tar.gz"
+      sha256 "035ff2393c6c25499075cf40458c8bdad604fb5da18462cd9491e0cb1c4f093f"
+      def install
+        bin.install "gum"
+        bash_completion.install "completions/gum.bash" => "gum"
+        zsh_completion.install "completions/gum.zsh" => "_gum"
+        fish_completion.install "completions/gum.fish"
+        man1.install "manpages/gum.1.gz"
       end
     end
   end
