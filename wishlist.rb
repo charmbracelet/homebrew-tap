@@ -5,12 +5,12 @@
 class Wishlist < Formula
   desc "The SSH directory"
   homepage "https://charm.sh/"
-  version "0.15.1"
+  version "0.15.2"
 
   on_macos do
-    on_intel do
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.1/wishlist_0.15.1_Darwin_x86_64.tar.gz"
-      sha256 "a3cfddf03d4688d874dcda6cb0dc17152c1f5f50741b82f11d553e5f69f52a55"
+    if Hardware::CPU.intel?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.2/wishlist_0.15.2_Darwin_x86_64.tar.gz"
+      sha256 "692f97e88c800f54696453b5ba3fcb6817ebad0f655f057d3794a8adbdc7c60e"
 
       def install
         bin.install "wishlist"
@@ -20,9 +20,9 @@ class Wishlist < Formula
         man1.install "manpages/wishlist.1.gz"
       end
     end
-    on_arm do
-      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.1/wishlist_0.15.1_Darwin_arm64.tar.gz"
-      sha256 "6a3dd310417bf26635316b4eeaafff31019e014c337c5191a71b3b375d278d3e"
+    if Hardware::CPU.arm?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.2/wishlist_0.15.2_Darwin_arm64.tar.gz"
+      sha256 "733c360a25b3787e5b33576a406124867d8de42ee7be604e67ca2cdb9ba779c4"
 
       def install
         bin.install "wishlist"
@@ -35,46 +35,37 @@ class Wishlist < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.1/wishlist_0.15.1_Linux_x86_64.tar.gz"
-        sha256 "b95500421fd8e873c7684eadd14d798b0ff47bdbf1a7580bdde4fb88965b185e"
-
-        def install
-          bin.install "wishlist"
-          bash_completion.install "completions/wishlist.bash" => "wishlist"
-          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
-          fish_completion.install "completions/wishlist.fish"
-          man1.install "manpages/wishlist.1.gz"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.2/wishlist_0.15.2_Linux_x86_64.tar.gz"
+      sha256 "09b9bf4623b77b115e85403440122128a15edfc3021d3fac9f2c0ab01fb32555"
+      def install
+        bin.install "wishlist"
+        bash_completion.install "completions/wishlist.bash" => "wishlist"
+        zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+        fish_completion.install "completions/wishlist.fish"
+        man1.install "manpages/wishlist.1.gz"
       end
     end
-    on_arm do
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.1/wishlist_0.15.1_Linux_armv7.tar.gz"
-        sha256 "94b8db22511961a90d23179936998d48f940f6a77edfeeab6ae0b4a6d91e7708"
-
-        def install
-          bin.install "wishlist"
-          bash_completion.install "completions/wishlist.bash" => "wishlist"
-          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
-          fish_completion.install "completions/wishlist.fish"
-          man1.install "manpages/wishlist.1.gz"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.2/wishlist_0.15.2_Linux_armv7.tar.gz"
+      sha256 "94fb20343202ecea88d40ec50f7fe6dbb00e97a937324506913c2abb005c444e"
+      def install
+        bin.install "wishlist"
+        bash_completion.install "completions/wishlist.bash" => "wishlist"
+        zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+        fish_completion.install "completions/wishlist.fish"
+        man1.install "manpages/wishlist.1.gz"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.1/wishlist_0.15.1_Linux_arm64.tar.gz"
-        sha256 "96e0e07ddd3bf8a6387fe70973a44d95c0a1be389ef00bcba741818790b971e9"
-
-        def install
-          bin.install "wishlist"
-          bash_completion.install "completions/wishlist.bash" => "wishlist"
-          zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
-          fish_completion.install "completions/wishlist.fish"
-          man1.install "manpages/wishlist.1.gz"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/wishlist/releases/download/v0.15.2/wishlist_0.15.2_Linux_arm64.tar.gz"
+      sha256 "8098b23e4e2464cf9507c58da572a9de396114c7bc9cda4eda7e3316d57754b9"
+      def install
+        bin.install "wishlist"
+        bash_completion.install "completions/wishlist.bash" => "wishlist"
+        zsh_completion.install "completions/wishlist.zsh" => "_wishlist"
+        fish_completion.install "completions/wishlist.fish"
+        man1.install "manpages/wishlist.1.gz"
       end
     end
   end
