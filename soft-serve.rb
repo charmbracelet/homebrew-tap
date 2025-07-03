@@ -5,15 +5,15 @@
 class SoftServe < Formula
   desc "A tasty, self-hostable Git server for the command line🍦"
   homepage "https://charm.sh/"
-  version "0.8.5"
+  version "0.9.0"
 
   depends_on "bash"
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Darwin_x86_64.tar.gz"
-      sha256 "e2674626dd3eb9479cb7011f14fc5b76c21f9535e1aadfdedcae6cbc53495587"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.9.0/soft-serve_0.9.0_Darwin_x86_64.tar.gz"
+      sha256 "efe114e1d5f6e2b5f49ce92f69fd0fa6837c523d005a9c451ff755c3389468ca"
 
       def install
         bin.install "soft"
@@ -24,8 +24,8 @@ class SoftServe < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Darwin_arm64.tar.gz"
-      sha256 "6e7bffba6451910eaadbbd861a5cead022b38f0bd077d33e90ae556dbed3c9e4"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.9.0/soft-serve_0.9.0_Darwin_arm64.tar.gz"
+      sha256 "d58d3e903152e9126a4756560b56beacae2b45496f68d358f636fdead2deda3c"
 
       def install
         bin.install "soft"
@@ -38,32 +38,26 @@ class SoftServe < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Linux_x86_64.tar.gz"
-        sha256 "0c5a166847218db177d85da3e454a393cf82acf7674e9f2070ee49aedb1dca68"
-
-        def install
-          bin.install "soft"
-          bash_completion.install "completions/soft-serve.bash" => "soft-serve"
-          zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
-          fish_completion.install "completions/soft-serve.fish"
-          man1.install "manpages/soft-serve.1.gz"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.9.0/soft-serve_0.9.0_Linux_x86_64.tar.gz"
+      sha256 "e50409b7da21954fd8f7f9c22d928af95a092c362979af09303fb6e0d6aa4526"
+      def install
+        bin.install "soft"
+        bash_completion.install "completions/soft-serve.bash" => "soft-serve"
+        zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
+        fish_completion.install "completions/soft-serve.fish"
+        man1.install "manpages/soft-serve.1.gz"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/charmbracelet/soft-serve/releases/download/v0.8.5/soft-serve_0.8.5_Linux_arm64.tar.gz"
-        sha256 "e56b289db62891e73648179b2d78ee4b618b64f086b8301a5c6e7364ab718133"
-
-        def install
-          bin.install "soft"
-          bash_completion.install "completions/soft-serve.bash" => "soft-serve"
-          zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
-          fish_completion.install "completions/soft-serve.fish"
-          man1.install "manpages/soft-serve.1.gz"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.9.0/soft-serve_0.9.0_Linux_arm64.tar.gz"
+      sha256 "f5e2e6b851ff93daff08f7d1129ea7903430f3872ae8735bc53046a5fcf4dbad"
+      def install
+        bin.install "soft"
+        bash_completion.install "completions/soft-serve.bash" => "soft-serve"
+        zsh_completion.install "completions/soft-serve.zsh" => "_soft-serve"
+        fish_completion.install "completions/soft-serve.fish"
+        man1.install "manpages/soft-serve.1.gz"
       end
     end
   end
