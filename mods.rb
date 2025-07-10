@@ -5,12 +5,12 @@
 class Mods < Formula
   desc "AI on the command line"
   homepage "https://charm.sh/"
-  version "1.8.0"
+  version "1.8.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.8.0/mods_1.8.0_Darwin_x86_64.tar.gz"
-      sha256 "f54cc253accda07f79ad7b9b6d65b923e502bd41aeb776b1231db861ace6ce47"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.8.1/mods_1.8.1_Darwin_x86_64.tar.gz"
+      sha256 "0ae5f55ae1764fd47c347a7b4e75b71dbcdbb41e56c64bf90be4f1481dba0377"
 
       def install
         bin.install "mods"
@@ -21,8 +21,8 @@ class Mods < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.8.0/mods_1.8.0_Darwin_arm64.tar.gz"
-      sha256 "a0fee4d75389b8aceae020b4ab292024acd9e7cb7a0cadc0dbd63f261bbc2358"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.8.1/mods_1.8.1_Darwin_arm64.tar.gz"
+      sha256 "a09528a438487fbda43809d5adcbc4211a5020bd69372ff0d319a8f28bd900b2"
 
       def install
         bin.install "mods"
@@ -36,8 +36,8 @@ class Mods < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.8.0/mods_1.8.0_Linux_x86_64.tar.gz"
-      sha256 "06312a833be1296622a3be5c45dc3c034f2f83df61f158abdcc62b704d7a923f"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.8.1/mods_1.8.1_Linux_x86_64.tar.gz"
+      sha256 "a3313f3064f7c104835e1f9c53788524cfafc1675c1e18fca786b7051766745d"
       def install
         bin.install "mods"
         bash_completion.install "completions/mods.bash" => "mods"
@@ -47,8 +47,8 @@ class Mods < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/mods/releases/download/v1.8.0/mods_1.8.0_Linux_arm64.tar.gz"
-      sha256 "a565fd4b51d0a046f38f32b989fb6a245e5087b0f1c3dc76f5b05ea2721d5077"
+      url "https://github.com/charmbracelet/mods/releases/download/v1.8.1/mods_1.8.1_Linux_arm64.tar.gz"
+      sha256 "448d205e27e1ec0cb4e185275ff826e93b16182d35977652db01e4d475b1b671"
       def install
         bin.install "mods"
         bash_completion.install "completions/mods.bash" => "mods"
