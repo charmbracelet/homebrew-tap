@@ -2,33 +2,33 @@
 cask "crush" do
   desc "A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal."
   homepage "https://charm.sh/crush"
-  version "0.1.1"
+  version "0.1.2"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "crush", target: "crush"
+  binary "crush"
 
   on_macos do
     on_intel do
-      url "https://github.com/charmbracelet/crush/releases/download/v0.1.1/crush_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "6628644c4b15daf2d5a9c9253cb1b285cd13b50d46f535a7c9e5412aed94cbae"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.1.2/crush_0.1.2_Darwin_x86_64.tar.gz"
+      sha256 "bacbeafe369bdc2f1b459d70c295e7716843395026b8c11d78bb69438d5284aa"
     end
     on_arm do
-      url "https://github.com/charmbracelet/crush/releases/download/v0.1.1/crush_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "5aff7e423554e5a87a2332b0b5419396574bc370a0a475692ee0adcc202e4c4f"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.1.2/crush_0.1.2_Darwin_arm64.tar.gz"
+      sha256 "04eeee5dc9d14bc6868d155767ef628587e7e7a89f8ff37534ca6839b6085a56"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/charmbracelet/crush/releases/download/v0.1.1/crush_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "f9969ddad399855bead1348e3cfda615e550db213d1899fd78add904a501c06f"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.1.2/crush_0.1.2_Linux_x86_64.tar.gz"
+      sha256 "f962690ad58f2462314ca8ac959f16632c1003726045b40571397ceb41e4ca81"
     end
     on_arm do
-      url "https://github.com/charmbracelet/crush/releases/download/v0.1.1/crush_0.1.1_Linux_arm64.tar.gz"
-      sha256 "2f215930030b273ff7ea83a538057a476d8c8e442ef31a3b32d3b70d535e526f"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.1.2/crush_0.1.2_Linux_arm64.tar.gz"
+      sha256 "a8348be84f611e3ccce08b4eeb5103ede4f8c6e926ba5592e97c59199f13429f"
     end
   end
 
