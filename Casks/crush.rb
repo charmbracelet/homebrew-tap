@@ -8,16 +8,17 @@ cask "crush" do
     skip "Auto-generated on release."
   end
 
-  binary "crush"
 
   on_macos do
     on_intel do
       url "https://github.com/charmbracelet/crush/releases/download/v0.1.3/crush_0.1.3_Darwin_x86_64.tar.gz"
       sha256 "e95491e4695b4cbecee47b477bb4f1dcf031d8c1c18d86ab42c352d44d5aecc0"
+      binary "crush_0.1.3_Darwin_x86_64/crush"
     end
     on_arm do
       url "https://github.com/charmbracelet/crush/releases/download/v0.1.3/crush_0.1.3_Darwin_arm64.tar.gz"
       sha256 "a7c1722890e1e314a186b0b73f245d31fd1ef22e41f9adcd0c2a332a453a72eb"
+      binary "crush_0.1.3_Darwin_arm64/crush"
     end
   end
 
@@ -25,10 +26,12 @@ cask "crush" do
     on_intel do
       url "https://github.com/charmbracelet/crush/releases/download/v0.1.3/crush_0.1.3_Linux_x86_64.tar.gz"
       sha256 "56385bb5a487d96fbc4fa24bbeb3ad541565cab34c90a96ef26f260348b4ac28"
+      binary "crush_0.1.3_Linux_x86_64/crush"
     end
     on_arm do
       url "https://github.com/charmbracelet/crush/releases/download/v0.1.3/crush_0.1.3_Linux_arm64.tar.gz"
       sha256 "ef5794cdc6e50944bcb1bf79838dbac961d16077dbe51100138aced5d56d4344"
+      binary "crush_0.1.3_Linux_arm64/crush"
     end
   end
 
