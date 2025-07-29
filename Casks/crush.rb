@@ -8,7 +8,7 @@ cask "crush" do
     skip "Auto-generated on release."
   end
 
-  binary "crush"
+  binary "crush", target: "crush"
 
   on_macos do
     on_intel do
