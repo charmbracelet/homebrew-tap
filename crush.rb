@@ -5,13 +5,13 @@
 class Crush < Formula
   desc "A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal."
   homepage "https://charm.sh/crush"
-  version "0.19.0"
+  version "0.19.1"
   license "FSL-1.1-MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/crush/releases/download/v0.19.0/crush_0.19.0_Darwin_x86_64.tar.gz"
-      sha256 "4a1b9c9fcfd6e5ad58b1b8bd552d832cfb584b2c2df3685175f44b4bfe99f2b0"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.19.1/crush_0.19.1_Darwin_x86_64.tar.gz"
+      sha256 "9c59f2562aaa29254c5d900f26142411749eb49ea50d4c6bb2df657f720d192c"
 
       def install
         bin.install "crush"
@@ -22,8 +22,8 @@ class Crush < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/crush/releases/download/v0.19.0/crush_0.19.0_Darwin_arm64.tar.gz"
-      sha256 "cd35c0710cc35e787721ba177f238a06e76b713112194fba14d05e40d7502fe6"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.19.1/crush_0.19.1_Darwin_arm64.tar.gz"
+      sha256 "a8a6bb140d3e0b688e502fed0d4505198e44b23b136b3a615355f34460ead828"
 
       def install
         bin.install "crush"
@@ -37,8 +37,8 @@ class Crush < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/crush/releases/download/v0.19.0/crush_0.19.0_Linux_x86_64.tar.gz"
-      sha256 "9ed6c29bae0a0650c28b87afefc829b32f8bf04bbf7e553bb864629ad415859e"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.19.1/crush_0.19.1_Linux_x86_64.tar.gz"
+      sha256 "37363d6464b3cf4256133cc7840cb7040539304dcdc03396f5ca6acb31c95c5d"
       def install
         bin.install "crush"
         bash_completion.install "completions/crush.bash" => "crush"
@@ -48,8 +48,8 @@ class Crush < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/crush/releases/download/v0.19.0/crush_0.19.0_Linux_armv7.tar.gz"
-      sha256 "2de7f1d00274a4eabe11ae51366b034a036e5f1f51c10dfdaadf5d742e7f648d"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.19.1/crush_0.19.1_Linux_armv7.tar.gz"
+      sha256 "3c3e30d185589f240d959a2e38e448545bce6dd918d5b064305113c72e94b8f8"
       def install
         bin.install "crush"
         bash_completion.install "completions/crush.bash" => "crush"
@@ -59,8 +59,8 @@ class Crush < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/crush/releases/download/v0.19.0/crush_0.19.0_Linux_arm64.tar.gz"
-      sha256 "cdcbc1528363071aa69865a8a93f38d35fe040acb423654039e3e2736d71af7f"
+      url "https://github.com/charmbracelet/crush/releases/download/v0.19.1/crush_0.19.1_Linux_arm64.tar.gz"
+      sha256 "155a4c0094dd493cbf703ab7c39b55f23523a80e3a73b11538507d3ec6ba0433"
       def install
         bin.install "crush"
         bash_completion.install "completions/crush.bash" => "crush"
