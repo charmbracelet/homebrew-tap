@@ -5,7 +5,7 @@
 class SoftServe < Formula
   desc "A tasty, self-hostable Git server for the command line🍦"
   homepage "https://charm.land/"
-  version "0.11.5"
+  version "0.11.6"
   license "MIT"
 
   depends_on "bash"
@@ -13,8 +13,8 @@ class SoftServe < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.5/soft-serve_0.11.5_Darwin_x86_64.tar.gz"
-      sha256 "c703593a1e139227adb3d5ae9803ab6ea5fcc5cb7838fde4cf0d3ce4521b73f0"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.6/soft-serve_0.11.6_Darwin_x86_64.tar.gz"
+      sha256 "7c5bd67529c8fb4450cded6836b80733054e442497dc3e582a1f41ac3bc0de14"
 
       define_method(:install) do
         bin.install "soft"
@@ -25,8 +25,8 @@ class SoftServe < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.5/soft-serve_0.11.5_Darwin_arm64.tar.gz"
-      sha256 "66e3463c5c349e95b278da91e3419809a1d9d262bf490caa2c49c3a6328de7ae"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.6/soft-serve_0.11.6_Darwin_arm64.tar.gz"
+      sha256 "92782b1fc9912d886a9299b2f5b1157141afc02d596264cc414557392cd6fa0b"
 
       define_method(:install) do
         bin.install "soft"
@@ -40,8 +40,8 @@ class SoftServe < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.5/soft-serve_0.11.5_Linux_x86_64.tar.gz"
-      sha256 "577a5e170a1f304ba8df26fe6c60196af100804dc8545f27300c0315f7f99f4a"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.6/soft-serve_0.11.6_Linux_x86_64.tar.gz"
+      sha256 "b8fd6eb9a6d197d407cc9cf2c4ef58f3bce7a2966353984edf1a728cba6b9da8"
       define_method(:install) do
         bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
@@ -51,8 +51,8 @@ class SoftServe < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.5/soft-serve_0.11.5_Linux_arm64.tar.gz"
-      sha256 "f595b3a8d0f01b434e7fe7183fe7a8d44e1eee6a751927df66a6fe0882714dec"
+      url "https://github.com/charmbracelet/soft-serve/releases/download/v0.11.6/soft-serve_0.11.6_Linux_arm64.tar.gz"
+      sha256 "cebf8b7aa3b16983dbce795e6a039d08a45a2b328d96415ba276f064ebf08dea"
       define_method(:install) do
         bin.install "soft"
         bash_completion.install "completions/soft-serve.bash" => "soft-serve"
