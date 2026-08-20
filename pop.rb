@@ -5,13 +5,13 @@
 class Pop < Formula
   desc "Send emails from your terminal. 📬"
   homepage "https://charm.land/"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.4.0/pop_0.4.0_Darwin_x86_64.tar.gz"
-      sha256 "35d83fbb097c3cc23ca23b053a786b9a3825be5346fd76f304e8d80002983a67"
+      url "https://github.com/charmbracelet/pop/releases/download/v0.5.0/pop_0.5.0_Darwin_x86_64.tar.gz"
+      sha256 "108dae3baad6610015ae523d26ab08a27d3d6993de9335549c1c13aabc2ca247"
 
       define_method(:install) do
         bin.install "pop"
@@ -22,8 +22,8 @@ class Pop < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.4.0/pop_0.4.0_Darwin_arm64.tar.gz"
-      sha256 "e9c67e011292b924f13c9a577e0cb2fc81d0e952663a626f42a7f7a6a3be83a2"
+      url "https://github.com/charmbracelet/pop/releases/download/v0.5.0/pop_0.5.0_Darwin_arm64.tar.gz"
+      sha256 "2a0e8cdc70c51e8e49af54e5e1a366b654376f7f673e2804f1c35ac0b31231ad"
 
       define_method(:install) do
         bin.install "pop"
@@ -37,8 +37,8 @@ class Pop < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.4.0/pop_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "3d62475f0b295f601f01a7d8bb3f0aded0966dcc195b589eb88fc09df68b48f5"
+      url "https://github.com/charmbracelet/pop/releases/download/v0.5.0/pop_0.5.0_Linux_x86_64.tar.gz"
+      sha256 "5017aad5378fede81c5879e4205f869a5a94841df3b65649c0248ab1a6a3d536"
       define_method(:install) do
         bin.install "pop"
         bash_completion.install "completions/pop.bash" => "pop"
@@ -48,8 +48,8 @@ class Pop < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.4.0/pop_0.4.0_Linux_armv7.tar.gz"
-      sha256 "4bfd95a289d123b1665544c1b94d23f9022d41c2736cbaa7955a95dbed312a10"
+      url "https://github.com/charmbracelet/pop/releases/download/v0.5.0/pop_0.5.0_Linux_armv7.tar.gz"
+      sha256 "a93003eff88b8abdc2cd54597002db11b40afe0f935276f7ac57b0f6d9b29aeb"
       define_method(:install) do
         bin.install "pop"
         bash_completion.install "completions/pop.bash" => "pop"
@@ -59,8 +59,8 @@ class Pop < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/pop/releases/download/v0.4.0/pop_0.4.0_Linux_arm64.tar.gz"
-      sha256 "e1fadfc38dc5c5ad28064fec9f566be3324771f4933b0bbb4dc8524bab39b6ba"
+      url "https://github.com/charmbracelet/pop/releases/download/v0.5.0/pop_0.5.0_Linux_arm64.tar.gz"
+      sha256 "79a4785d48548974a225ad44f160de447e627ba9291e973341c5fcb9fd96e0f5"
       define_method(:install) do
         bin.install "pop"
         bash_completion.install "completions/pop.bash" => "pop"
