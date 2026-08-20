@@ -5,15 +5,15 @@
 class Gum < Formula
   desc "A tool for glamorous shell scripts"
   homepage "https://charm.land/"
-  version "0.17.0"
+  version "2.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.17.0/gum_0.17.0_Darwin_x86_64.tar.gz"
-      sha256 "cd66576aeebe6cd19c771863c7e8d696e0e1d5387d1e7075666baa67c2052e53"
+      url "https://github.com/charmbracelet/gum/releases/download/v2.0.0/gum_2.0.0_Darwin_x86_64.tar.gz"
+      sha256 "a5aa27c887f891427cfa84d4e11aa25254c982fb1591633009bb16d0e9398f49"
 
-      def install
+      define_method(:install) do
         bin.install "gum"
         bash_completion.install "completions/gum.bash" => "gum"
         zsh_completion.install "completions/gum.zsh" => "_gum"
@@ -22,10 +22,10 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.17.0/gum_0.17.0_Darwin_arm64.tar.gz"
-      sha256 "e2a4b8596efa05821d8c58d0c1afbcd7ad1699ba69c689cc3ff23a4a99c8b237"
+      url "https://github.com/charmbracelet/gum/releases/download/v2.0.0/gum_2.0.0_Darwin_arm64.tar.gz"
+      sha256 "20224bcddeda5b9146373862ca77be7b1592c46c271435e00a2d3ab3f7750bb0"
 
-      def install
+      define_method(:install) do
         bin.install "gum"
         bash_completion.install "completions/gum.bash" => "gum"
         zsh_completion.install "completions/gum.zsh" => "_gum"
@@ -37,9 +37,9 @@ class Gum < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.17.0/gum_0.17.0_Linux_x86_64.tar.gz"
-      sha256 "69ee169bd6387331928864e94d47ed01ef649fbfe875baed1bbf27b5377a6fdb"
-      def install
+      url "https://github.com/charmbracelet/gum/releases/download/v2.0.0/gum_2.0.0_Linux_x86_64.tar.gz"
+      sha256 "c99b0005bb5b514770eea404b24c7987e08eba35bb0b2d7bc6545bb676c36861"
+      define_method(:install) do
         bin.install "gum"
         bash_completion.install "completions/gum.bash" => "gum"
         zsh_completion.install "completions/gum.zsh" => "_gum"
@@ -48,9 +48,9 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.17.0/gum_0.17.0_Linux_armv7.tar.gz"
-      sha256 "25711c2fbc6887cde79ed586972834121a04955968808dd688c688381ac50ab2"
-      def install
+      url "https://github.com/charmbracelet/gum/releases/download/v2.0.0/gum_2.0.0_Linux_armv7.tar.gz"
+      sha256 "dfe2370479536fd2a3823407769ee49a6b863157fbb687753ca9bf4d70da4e76"
+      define_method(:install) do
         bin.install "gum"
         bash_completion.install "completions/gum.bash" => "gum"
         zsh_completion.install "completions/gum.zsh" => "_gum"
@@ -59,9 +59,9 @@ class Gum < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/gum/releases/download/v0.17.0/gum_0.17.0_Linux_arm64.tar.gz"
-      sha256 "b0b9ed95cbf7c8b7073f17b9591811f5c001e33c7cfd066ca83ce8a07c576f9c"
-      def install
+      url "https://github.com/charmbracelet/gum/releases/download/v2.0.0/gum_2.0.0_Linux_arm64.tar.gz"
+      sha256 "ed51e91457a48f5681f67dd925bd40eb1794d41d1f48cf1d7e19e2517b7fac76"
+      define_method(:install) do
         bin.install "gum"
         bash_completion.install "completions/gum.bash" => "gum"
         zsh_completion.install "completions/gum.zsh" => "_gum"
