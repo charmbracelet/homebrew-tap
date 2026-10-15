@@ -5,21 +5,21 @@
 class Charmtone < Formula
   desc "A command line tool for rendering the CharmTone color palette."
   homepage "https://charm.land/"
-  version "0.0.1"
+  version "0.1.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/charmbracelet/tone/releases/download/v0.0.1/charmtone_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "329ce58e418b6a39ed64877676b49f3953f19f21e4b745cf7a1c042f7184c883"
+      url "https://github.com/charmbracelet/tone/releases/download/v0.1.0/charmtone_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "ce1958324652903092d7ea03403b40205dce41372e52bc1b549d7612f11c4929"
 
       define_method(:install) do
         bin.install "charmtone"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/charmbracelet/tone/releases/download/v0.0.1/charmtone_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "468d42fb47ff40e23dd12a0b881f1e5781326a16ef0174ad6f8070c46ba22268"
+      url "https://github.com/charmbracelet/tone/releases/download/v0.1.0/charmtone_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "c5b38654f4452eeff880d36890825e474295052a3f69b82e5b50b87670e96899"
 
       define_method(:install) do
         bin.install "charmtone"
@@ -29,15 +29,15 @@ class Charmtone < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/tone/releases/download/v0.0.1/charmtone_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "55a1d5738d523818e6d2b606cc4e06b2cc78fc51776fd30c32e9004dabe85366"
+      url "https://github.com/charmbracelet/tone/releases/download/v0.1.0/charmtone_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "d6d2a9088fa160ea457ad668540c0e929bc774557919b2d758e3dabca233f355"
       define_method(:install) do
         bin.install "charmtone"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/charmbracelet/tone/releases/download/v0.0.1/charmtone_0.0.1_Linux_arm64.tar.gz"
-      sha256 "07e112b2b55b44f56057c68daa4ffd39fd14e9e7129263247b74dc2320ec238e"
+      url "https://github.com/charmbracelet/tone/releases/download/v0.1.0/charmtone_0.1.0_Linux_arm64.tar.gz"
+      sha256 "f7be394809d7392ff7095d1c2be6720b6a7381895a3e407e7da4af308b839147"
       define_method(:install) do
         bin.install "charmtone"
       end
